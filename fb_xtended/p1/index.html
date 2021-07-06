@@ -1,0 +1,68 @@
+IMPORTANT CODE:
+<form id="contact-form"  action="email.php" method="post" name="contactform">
+
+// То есть важен экшн: email.php
+// См. теги к файлу email.php
+
+
+
+
+
+
+
+
+FULL TEMPLATE:
+<!-- Contact Section -->
+	<section id="contact">
+		<!-- Contact Form-->
+		<div id="contact-form-section" class="contact-form-section">
+			<div class="white-bg">
+				<div class="sec-head-container">
+					<div class="sec-head-style">
+						<h2 class="section-title wow bounceInDown">
+							<span>Get In</span> Touch
+						</h2><!-- /.section-title -->
+
+						<div class="section-description">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto modi vel repudiandae reiciendis, cupiditate quod voluptatibus, placeat ad assumenda molestiae alias quisquam
+						</div><!-- /.section-description -->
+					</div><!-- /.sec-head-style -->
+				</div><!-- /.sec-head-container -->
+
+				<div class="container">
+					<div class="row">
+						<div class="contact-form-container">
+							<form id="contact-form"  action="email.php" method="post" name="contactform">
+								<div class="col-md-6">
+									<div id="name_error" class="error"><img src="assets/images/email/error.png" alt="Error!">Please enter your name.</div>
+									<input id="name" class="form-control" name="name" type="text" placeholder=" Your Name" required>
+
+									<div id="email_error" class="error"><img src="assets/images/email/error.png" alt="Error!">Please enter your valid E-mail ID.</div>
+									<input id="email" class="form-control" name="email" type="email" placeholder="Your Email" required>
+
+									<div id="subject_error" class="error"><img src="assets/images/email/error.png" alt="Error!">Please enter the subject.</div>
+									<input id="subject" class="form-control" name="subject" type="text" placeholder="Your phone" required>
+								</div><!-- /.col-md-6 -->
+
+								<div class="col-md-6">
+									<div id="message_error" class="error"><img src="assets/images/email/error.png" alt="Error!">Please enter your message.</div>
+									<textarea id="your_message" class="form-control" name="your_message" placeholder="Your Message" rows="4" required></textarea>
+									
+									<div id="submit">
+										<button type="submit" id="send_message" class="btn btn-sm btn-default full-width btn-effect">Send Message</button>
+									</div><!-- /#submit -->
+								</div><!-- /.col-md-6 -->
+								<div class="col-md-12">
+									<div id="mail_success" class="success"><img src="assets/images/email/success.png" alt="Success!">Your message has been sent successfully.</div>
+									<div id='mail_fail' class='error'>
+										<img src="assets/images/email/error.png" alt="Error!"> Sorry, error occurred this time sending your message.
+									</div>
+								</div><!-- /.col-md-12 -->							
+							</form><!-- /#contact-form -->
+						</div><!-- /.contact-form-container -->
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</div><!-- /.white-bg -->
+		</div><!-- /#contact-form-section -->
+		<!-- Contact Form End-->
+

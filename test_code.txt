@@ -1,0 +1,101 @@
+function check() {
+const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+let randomString = [];
+let word = 'andrew';
+    while (randomString.length != word.length) {
+for (let i = 0; i < word.length; i++) {
+let possible = alphabet[Math.floor(Math.random() * alphabet.length)];
+       // console.log(word[i])
+         if (possible == word[i] && !randomString.includes(possible) ) {
+              randomString.push(possible);
+         } else {
+            continue;
+         }
+           }
+   
+}
+
+let anagrams = generateAnagram(randomString.sort().join(''));
+let result = '';
+anagrams.forEach(items => items == word ? result = 'Generated name: ' +  items : false)
+
+
+return result;
+
+
+
+
+}
+
+
+function generateAnagram(word, anagram = '', anagrams = []) {
+    if (!word) {
+        anagrams.push(anagram);
+        return;
+    }
+
+    for (let i = 0; i < word.length; i++) {
+        
+        anagram += word[i];
+        generateAnagram(word.slice(0, i) + word.slice(i + 1), anagram, anagrams);
+        anagram = anagram.slice(0, anagram.length - 1);
+    }
+
+return [...new Set(anagrams)]
+}
+
+console.log(check())
+
+
+
+
+
+
+
+/////////////////////////////////////////////////
+
+
+
+
+function check() {
+
+
+
+const input = 'javascript is awesome';
+let output = '';
+
+for (let i = 0; i < input.length; i++) {
+
+    output += change(input[i]);
+
+}
+
+return output;
+
+}
+
+function change(value) {
+const words = [4, 3, 1, 0];
+
+    switch (value) {
+       case 'a':
+        return words[0];
+        break;   
+       case 'e':
+        return words[1];
+        break;   
+       case 'i':
+        return words[2];
+        break;   
+       case 'o':
+        return words[3];
+        break;   
+       default:  
+        return value;
+    }
+}
+
+  
+
+console.log(check());
+    

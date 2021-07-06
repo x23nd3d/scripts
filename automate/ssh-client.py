@@ -1,0 +1,21 @@
+import time
+import pexpect
+
+print('[+] Connecting to the Main Server...')
+time.sleep(0.5)
+client = pexpect.spawn('ssh andrew@IP')
+client.expect("andrew@IP's password:")
+client.sendline('password')
+# client.sendline("sudo -s")
+# client.expect("password for andrew: ")
+# client.sendline('password')
+print('[+] Connected to the Main Server.')
+time.sleep(0.5)
+print("[+] Opening the Developer's server directory...")
+client.sendline('cd store')
+time.sleep(0.5)
+print("[+] Running the Developer's client...")
+client.sendline('npm run client')
+time.sleep(0.5)
+print("[+] Successfully connected. Client is working [...] >")
+client.interact()

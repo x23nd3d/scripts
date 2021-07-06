@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let factorial = (number) => {
+            return (number != 1) ? number * factorial(number - 1) : 1;
+        }
+        
+        let inputNumber = prompt("Введите число", '');
+        while((!isNaN(parseInt(inputNumber)) && isFinite(inputNumber)) == false || +inputNumber <= 0) {
+            inputNumber = prompt("Введите число", '');
+        }
+        alert(factorial(inputNumber));
+    </script>
+</body>
+</html>

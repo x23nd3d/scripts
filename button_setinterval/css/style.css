@@ -1,0 +1,64 @@
+
+body {
+   height: 100vh;
+   margin: 0;
+}
+
+.page-title {
+   font-size: 28px;
+   font-weight: bold;
+}
+
+.btn {
+   display: inline-block;
+   text-decoration: none;
+   border: 1px solid orange;
+   color: orange;
+   padding: 10px 15px;
+   font-size: 18px;
+}
+
+.modal {
+   visibility: hidden;
+   border: 1px solid orange;
+   padding: 30px 50px;
+   box-sizing: border-box;
+   position: absolute;
+   top: 0;
+   left: 0;
+   transform: translate(-100%, -100%);
+   transition: all 1s;
+
+       bottom: calc(50% - 75px);
+       left: calc(50% - 300px);
+
+}
+
+.modal.active {
+   visibility: visible;
+   bottom: 50%;
+   left: 50%;
+   transform: translate(-50%, 50%);
+}
+.closed {
+   visibility: hidden;
+   bottom: 50%;
+   left: 50%;
+   transform: translate(-50%, 50%);
+}
+
+.modal-cross {
+   text-decoration: none;
+   font-weight: bold;
+   color: orange;
+   position: absolute;
+   top: 5px;
+   right: 5px;
+}
+
+.modal-title {
+   font-size: 24px;
+   margin: 0;
+   padding: 0;
+} 
+

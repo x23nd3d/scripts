@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fib(number1, number2, num) {
+            if (num == 1) {
+                return number1;
+            } else if (num == 2) {
+                return number2;
+            } else {
+                return fib(number1, number2, (num - 1)) + fib(number1, number2, (num - 2));
+            }
+        }
+        
+        function checkInputData(firstNum, secondNum, serialNum) {
+            while (!Number.isInteger(firstNum)) {
+                firstNum = +prompt("Введите первое число. (Число должно быть целым)", '');
+            }
+            while (!Number.isInteger(secondNum) || (firstNum > 0 && secondNum < firstNum) || (firstNum < 0 && secondNum > firstNum)) {
+                secondNum = +prompt("Введите второе число. (Число 2 не должно быть по модулю меньше модуля первого числа.)", '');
+            }
+            while (!Number.isInteger(serialNum) || serialNum <= 0) {
+                serialNum = +prompt("Введите порядковый номер числа Фибоначчи. (Порядковый номер должен быть не меньше 1 и являться целым числом)", '');
+            }
+            return [firstNum, secondNum, serialNum];
+        }
+        
+        let F0 = +prompt("Введите первое число", '');
+        let F1 = +prompt("Введите второе число", '');
+        let n = +prompt("Введите порядковый номер числа Фибоначчи", '');
+        
+        [F0, F1, n] = checkInputData(F0, F1, n);
+        alert(fib(F0, F1, n));
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+.container {
+    margin: 0 auto;
+}
+
+.slides {
+    position: relative;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.slide__img {
+    width: 800px;
+    height: 400px;
+}
+
+.showing {
+    opacity: 1;
+    z-index: 2;
+}
+
+.panel-control {
+    position: absolute;
+    z-index: 1000;
+    bottom: 30%;
+    left: 25%;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #fff;
+}
+
+.stop {
+    background: red;
+}
+
+.play {
+    background: green;
+}

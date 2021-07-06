@@ -1,0 +1,172 @@
+@font-face {
+    font-family: 'Arimo';
+    src: url('../fonts/Arimo.ttf');
+}
+
+.main-container {
+    background-image: url(../img/Background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Arimo', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 24px;
+    padding-bottom: 34px;
+    min-height: 100vh;
+}
+
+.table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.title {
+    width: 277px;
+    padding: 1em 0;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: inset 9px 0 5px -10px black;
+}
+
+.main-title {
+    width: 310px;
+    background-color: #fafafa;
+    color: #484848;
+    font-weight: 700;
+    vertical-align: middle;
+}
+
+.smaller-text {
+	font-size: 18px;
+}
+
+.bigger-text {
+	font-size: 30px;
+    padding-top: 10px;
+}
+
+.standart {
+	background-color:  #89c331;
+    font-size: 24px;
+}
+
+.ultimate {
+	background-color:  #f04a56;
+    font-size: 30px;
+}
+
+.premium {
+	background-color:  #20807c;
+    font-size: 24px;
+}
+
+.price {
+    background-color: #fafafa;
+    color: #484848;
+    font-weight: 700;
+    padding: 18px 0;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: inset 9px 0 5px -10px black;
+}
+
+.dollar-price {
+    font-size: 60px;
+    position: relative;
+}
+
+.dollar-price::after {
+    content: '.99';
+    font-size: 24px;
+    position: absolute;
+    right: 75px;
+    top: 10px;
+}
+
+.cent-price {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.string-1 {
+    background-color: #f2f2f2;
+}
+
+.string-2 {
+	background-color: #e3e3e3;
+    
+}
+
+.cell {
+    padding: 2em 0;
+    color: #484848;
+    font-size: 16px;
+    box-shadow: inset 9px 0 5px -10px black;
+}
+
+.icon {
+    color: #848484;
+}
+
+.button-cell {
+    box-shadow: inset 9px 0 5px -10px black;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.first-col-btn-cell {
+    background-color: #ddd;
+}
+
+.standart-btn-cell {
+	background-color: #eee;
+}
+
+.ultimate-btn-cell {
+	background-color: #f4f4f4;
+}
+
+.premium-btn-cell {
+	background-color: #eee;
+}
+
+.bottom-button {
+    width: 192px;
+    height: 3em;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+    outline: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.first-col-btn {
+    background-color: #484848;
+    box-shadow: 0 7px 0 #404040;
+}
+
+.bottom-button:focus {
+    box-shadow: none;
+    margin-top: 37px;
+    margin-bottom: 23px;
+}
+
+.standart-btn {
+    background-color: #89c331;
+    box-shadow: 0 7px 0 #79b027;
+}
+
+.ultimate-btn {
+	background-color:  #f04a56;
+    box-shadow: 0 7px 0 #df3a46;
+}
+
+.premium-btn {
+	background-color:  #20807c;
+    box-shadow: 0 7px 0 #16736f;
+}

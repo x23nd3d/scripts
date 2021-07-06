@@ -1,0 +1,198 @@
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Myriad Pro Regular', sans-serif;
+    font-weight: 400;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1280px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+header {
+    height: 188px;
+}
+
+.logo-brand {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.text-color {
+    font-size: 62px;
+    font-weight: 400;
+    color: #4bcaff;
+}
+
+.logo-brand > a {
+    font-size: 60px;
+    font-weight: 400;
+    color: #000000;
+    text-decoration: none;
+}
+
+/*Menu*/
+
+.menu {
+    width: 1280px;
+    height: 69px;
+    text-align: center;
+    background-color: #35444f;
+}
+
+.menu > ul {
+    box-sizing: border-box;
+    font-size: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+.menu > ul > li {
+    display: inline-block;
+    height: 48px;
+    margin-left: 0;
+    padding: 10px 15px 10px 15px;
+}
+
+.menu > ul > li > a {
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+.menu > ul > li:hover {
+    background: #222f3a;
+    border-left: 1px solid #818181;
+    border-right: 1px solid #818181;
+
+    -moz-transition: all .7s ease-out;
+    -o-transition: all .7s ease-out;
+    -webkit-transition: all .7s ease-out;
+}
+
+/* Menu end */
+
+.box {
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 52px;
+    box-sizing: border-box;
+    width: 921px;
+    height: 520px;
+    border: 1px solid #000;
+}
+
+.menu-left {
+    margin-top: 40px;
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    height: 330px;
+    border: 1px solid #000;
+    list-style-type: none;
+}
+
+.menu-left > a {
+    display: block;
+    padding-left: 44px;
+    box-sizing: border-box;
+    color: #485863;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 66px;
+    text-align: left;
+    text-decoration: none;
+}
+
+.menu-left > a:hover {
+    padding-left: 70px;
+    background-color: #dcdcdc;
+    color: #000;
+
+    -moz-transition: all .7s ease-out;
+    -o-transition: all .7s ease-out;
+    -webkit-transition: all .7s ease-out;
+}
+
+.top-img {
+    display: block;
+    margin: 72px auto;
+    vertical-align: middle;
+    text-align: center;
+
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+}
+
+.top-img:hover {
+    cursor: pointer;
+
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.text-p {
+    padding: 20px 0 0 420px;
+    display: inline-block;
+    width: 815px;
+    color: #2c2b2b;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+/*Footer Menu*/
+
+.footer-menu {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    height: 60px;
+    background-color: #b5b8bb;
+}
+
+.footer-menu > ul {
+    display: inline-block;
+    list-style-type: none;
+}
+
+.footer-menu > ul > li {
+    display: inline;
+    padding-right: 15px;
+}
+
+.footer-menu > ul > li > a {
+    color: #0c1927;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 30px;
+    text-decoration: none;
+}
+
+.footer-menu > ul > li > a:hover {
+    padding-bottom: 5px;
+    color: #2e82a7;
+    border-bottom: 1px solid #2e82a7;
+}
+
+footer > ul + span {
+    padding-left: 380px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+}

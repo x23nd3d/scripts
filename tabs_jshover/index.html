@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+   <style>
+        .slogan {
+            text-decoration: none;
+            position: relative;
+        }
+
+       .slogan-tooltip {
+           position: absolute;
+           top: 20px;
+           left: 0;
+           background-color: #000;
+           border-radius: 5px;
+           color: white;
+           padding: 10px 15px;
+           width: 150px;
+           text-align: center;
+       }
+
+   </style>
+</head>
+
+<body>
+<!--&;!&;  Напишите функцию, которая при наведении мыши на название великого дома Вестероса показывает евсплывающую подсказку с его девизом, хранящимся в атрибуте data-words, и прячет его когда мышка исчезает.-->
+<!--http://joxi.ru/DmBOednfJxqlk2 - мышка рядом со ссылкой-->
+<!--http://joxi.ru/82Q638DTwd877A - мышка на ссылке, подсказка появилась-->
+<!--&;&gt;-->
+
+<a href="#" class="slogan" data-words="Услышь мой рёв!">Ланнистеры</a>
+<a href="#" class="slogan" data-words="Нам — ярость!">Баратеоны</a>
+<a href="#" class="slogan" data-words="Высокий как честь">Аррены</a>
+<a href="#" class="slogan" data-words="Вырастая — крепнем">Тиреллы</a>
+<a href="#" class="slogan" data-words="Зима близко">Старки</a>
+<a href="#" class="slogan" data-words="Семья, долг, честь">Талли</a>
+<a href="#" class="slogan" data-words="Пламя и кровь!">Таргариены</a>
+<a href="#" class="slogan" data-words="Непреклонные, несгибаемые, несдающиеся">Мартеллы</a>
+<a href="#" class="slogan" data-words="Мы не сеем">Грейджои</a>
+
+<script>
+   const links = document.querySelectorAll('.slogan');
+   for (let i = 0; i < links.length; i++) {
+       links[i].addEventListener("mouseover", function() {
+           showTooltip(this, "slogan-tooltip");
+       });
+       links[i].addEventListener("mouseout", function() {
+           hideTooltip(this, "slogan-tooltip");
+       });
+   }
+
+   function showTooltip(elem, className) {
+       let span = document.createElement('span');
+       span.classList.add(className);
+       span.textContent = elem.dataset.words;
+       setTimeout(function () {
+           elem.appendChild(span);
+       }, 200);
+
+   }
+
+   function hideTooltip(elem, className) {
+       setTimeout(function () {
+           const span = elem.getElementsByClassName(className)[0];
+           span.remove();
+       }, 500);
+   }
+
+
+
+
+   // function hideTooltip(elem, className) {
+   //     const span = elem.getElementsByClassName(className)[0];
+   //     span.remove()
+   // }
+
+   //  const products = document.querySelectorAll('.product');
+   //    for(let i = 0; i < links.length; i++) {
+   //        links[i].addEventListener("mouseover", function(){
+   //            showTooltip(this, "slogan-toolTip")
+   //        });
+   //        links[i].addEventListener("mouseout", hideTooltip);
+   //    }
+   //
+
+</script>
+</body>
+
+</html>

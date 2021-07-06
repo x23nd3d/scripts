@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button id="draw-circle-button">Нарисовать круг</button>
+<script>
+    
+    function setCircleParameters() {
+        let button = document.getElementById('draw-circle-button');
+        button.remove();
+        
+        let diameterInput = document.createElement('input');
+        diameterInput.setAttribute('type', 'number');
+        diameterInput.id = 'diameter';
+        diameterInput.style.display = 'block';
+        diameterInput.setAttribute('placeholder', 'Введите диаметр');
+        diameterInput.style.marginBottom = '15px';
+        document.body.appendChild(diameterInput);
+        
+        let colorInput = document.createElement('input');
+        colorInput.id = 'color';
+        colorInput.style.display = 'block';
+        colorInput.setAttribute('placeholder', 'Задайте цвет');
+        colorInput.style.marginBottom = '15px';
+        document.body.appendChild(colorInput);
+        
+        let drawButton = document.createElement('button');
+        drawButton.setAttribute('onclick', 'drawCircle()');
+        drawButton.textContent = 'Нарисовать';
+        document.body.appendChild(drawButton);
+    }
+    
+    function drawCircle() {
+        let diameterValue = document.getElementById('diameter').value;
+        let colorValue = document.getElementById('color').value;
+        
+        let circle = document.createElement('div');
+        circle.style.height = `${diameterValue}px`;
+        circle.style.width = `${diameterValue}px`;
+        circle.style.borderRadius = '50%';
+        circle.style.backgroundColor = colorValue;
+        circle.style.margin = '15px';
+        document.body.appendChild(circle);
+    }
+    
+    document.getElementById('draw-circle-button').setAttribute('onclick', 'setCircleParameters()');
+    
+</script>
+</body>
+</html>

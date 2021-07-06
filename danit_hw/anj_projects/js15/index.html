@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="board">0:0:0</p>
+    <button id="start">Start</button>
+    <button id="pause">Pause</button>
+    <button id="clear">Clear</button>
+    
+    <script>
+        let startBtn = document.getElementById('start');
+        let pauseBtn = document.getElementById('pause');
+        let clearBtn = document.getElementById('clear');
+        let displayBoard = document.getElementById('board');
+        
+        startBtn.addEventListener('click', startTimer);
+        pauseBtn.addEventListener('click', pauseTimer);
+        clearBtn.addEventListener('click', clearTimer);
+        
+        document.getElementById('pause').style.display = 'none';
+        
+        let resultTime;
+        let milliseconds = 0,
+                seconds = 0,
+                minutes = 0,
+                diff = 0;
+        
+        function startTimer() {
+            startBtn.style.display = 'none';
+            pauseBtn.style.display = 'inline-block';
+            let now = new Date();
+            startTime = +now - diff;
+            resultTime = setInterval(function() {
+                let nowTime = new Date();
+                diff = +nowTime - startTime;
+                milliseconds = diff%1000;
+                seconds = Math.floor((diff%60000)/1000);
+                minutes = Math.floor((diff%3600000)/60000);
+                displayBoard.innerHTML = `${minutes}:${seconds}:${milliseconds}`;
+            }, 1);
+        }
+        
+        function pauseTimer() {
+            clearInterval(resultTime);
+            pauseBtn.style.display = 'none';
+            startBtn.style.display = 'inline-block';
+        }
+        
+        function clearTimer() {
+            clearInterval(resultTime);
+            minutes = seconds = milliseconds = diff = 0;
+            displayBoard.innerHTML = `${minutes}:${seconds}:${milliseconds}`;
+            pauseBtn.style.display = 'none';
+            startBtn.style.display = 'inline-block';
+        }
+        
+    </script>
+</body>
+</html>

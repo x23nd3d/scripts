@@ -1,0 +1,178 @@
+/*______COMMON PROPERTIES_____*/
+
+@font-face{
+    font-family: 'MyriadPro-Regular';
+    src: url('../font/MyriadPro/MyriadPro-Regular.otf');
+}
+
+.single-page {
+    font-family: 'MyriadPro-Regular', sans-serif;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    box-sizing: border-box;    
+}
+
+/*_____HEADER PROPERTIES_____*/
+
+.header {
+    padding-top: 61px;
+    margin-bottom: 51px;
+}
+
+.header-logo {
+    display: inline-block;
+    margin-bottom: 45px;
+    text-decoration: none;
+}
+
+.header-logo-title {
+    color: #000;
+    font-size: 80px;
+}
+
+.text-blue {
+    color: #4bcaff;
+}
+
+.header-menu {
+    text-align: center;
+    background-color: #35444f;
+}
+
+.header-menu-item {
+    display: inline-block;
+}
+
+.header-menu-link {
+    display: inline-block;
+    padding: 26px 41px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    transition: all 0.4s;
+}
+
+.header-menu-link.selected {
+    background-color: #222f3a;
+    border-left: 1px solid #818181;
+    border-right: 1px solid #818181;	
+}
+
+.header-menu-link:hover {
+    background-color: #222f3a;
+    border-left: 1px solid #818181;
+    border-right: 1px solid #818181;
+}
+
+/*_____CONTENT PROPERTIES_____*/
+
+.main {
+    margin-bottom: 51px;
+}
+
+.left-sidebar {
+    width: 344px;
+    float: left;
+}
+
+.left-menu {
+    border: 1px solid #32424e;
+}
+
+.left-menu-link {
+    display: inline-block;
+    padding: 30px 44px;
+    width: 100%;
+    text-decoration: none;
+    color: #485863;
+    font-size: 26.99px;
+    box-sizing: border-box;
+    transition: all 0.4s;
+}
+
+.left-menu-link.selected {
+    padding-left: 69px;
+    background-color: #dcdcdc;
+}
+
+.left-menu-link:hover {
+    padding-left: 69px;
+    background-color: #dcdcdc;
+}
+
+.content {
+    width: 885px;
+    float: right;
+}
+
+.main-image-container {
+    padding: 75px;
+    text-align: center;
+    border: 1px solid #32424e;
+}
+
+.img-fluid {
+    transition: all 0.4s;
+}
+
+.img-fluid:hover {
+    transform: scale(1.2);
+}
+
+.content-text {
+    margin: 30px 40px 0 30px;
+    color: #2c2b2b;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+/*_____FOOTER PROPERTIES_____*/
+
+.footer-menu {
+	 float: left;
+}
+
+.footer-menu-item {
+    display: inline-block;
+    margin-right: 26px;
+}
+
+.footer {
+    padding: 22px 31px;
+    box-sizing: border-box;
+    background-color: #b5b8bb;
+}
+
+.footer-menu-link {
+    text-decoration: none;
+    color: #0c1927;
+    font-size: 28px;
+    transition: all 0.3s;
+}
+
+.copyright-info {
+    color: #010000;
+    font-size: 24px;
+    float: right;
+}
+
+.footer-menu-link.selected {
+	color: #3181a6;
+    border-bottom: 1px solid #3181a6;
+}
+
+.footer-menu-link:hover {
+    color: #3181a6;
+    border-bottom: 1px solid #3181a6;
+}

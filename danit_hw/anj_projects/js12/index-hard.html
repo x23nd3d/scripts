@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button id="draw-circle-button" onclick="buttonClick()">Нарисовать круг</button>
+<script>
+    
+    function deleteCircle(event) {
+        event.target.style.display = 'none';
+    }
+    
+    function buttonClick() {
+        let button = document.getElementById('draw-circle-button');
+        button.remove();
+        
+        let diameterInput = document.createElement('input');
+        diameterInput.setAttribute('type', 'number');
+        diameterInput.id = 'diameter';
+        diameterInput.style.display = 'block';
+        diameterInput.setAttribute('placeholder', 'Введите диаметр');
+        diameterInput.style.marginBottom = '15px';
+        document.body.appendChild(diameterInput);
+        let diameterValue = diameterInput
+        
+        let drawButton = document.createElement('button');
+        drawButton.setAttribute('onclick', 'drawCircle()');
+        drawButton.textContent = 'Нарисовать';
+        drawButton.style.display = 'block';
+        document.body.appendChild(drawButton);
+    }
+    
+    function drawCircle() {
+        let diameterValue = document.getElementById('diameter').value;
+        for(let i = 0, n = 1; i < 100; i++) {
+            let R = Math.floor(Math.random() * (256));
+            let G = Math.floor(Math.random() * (256));
+            let B = Math.floor(Math.random() * (256));
+            
+            if(!(i%10)) {
+                let div = document.createElement('div');
+                div.id = `circle-row${n}`;
+                div.addEventListener('click', deleteCircle, false);
+                document.body.appendChild(div);
+                n++;
+            }
+            
+            let circle = document.createElement('div');
+            circle.id = 'circle';
+            circle.style.height = `${diameterValue}px`;
+            circle.style.width = `${diameterValue}px`;
+            circle.style.borderRadius = '50%';
+            circle.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+            circle.style.margin = '15px';
+            circle.style.display = 'inline-block';
+            document.getElementById(`circle-row${n-1}`).appendChild(circle);
+        }
+    }
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Modal Window</title>
+   <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<a href="#" id="buy-cat" data-target="modal-cat">Купить кота</a>
+<div id="modal-cat" class="modal">
+   <a href="#" class="modal-cross">X</a>
+   <h1>Купи кота!</h1>
+    <img src="cat.jpg" alt="">;
+</div>
+
+<script>
+   const modal = document.getElementById("modal-cat");
+   let timeOutID = setInterval(function() {
+       modal.classList.toggle("active");
+   }, 2000);
+
+   const modalCross = document.getElementsByClassName("modal-cross");
+
+   for (let i = 0; i < modalCross.length; i++) {
+       modalCross[i].addEventListener("click", function() {
+           closeModal(this, timeOutID, );
+       } );
+   }
+
+   function closeModal(elem, timeId) {
+       const modal = elem.closest(".modal");
+       modal.classList.remove("active");
+       clearInterval(timeId);
+   }
+</script>
+</body>
+
+</html>

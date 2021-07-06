@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+   <style>
+        .menu-top {
+            margin: auto;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu-top-link {
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 18px;
+            color: red;
+            border: 1px solid red;
+        }
+
+        .menu-top-link.selected {
+            color: white;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+<menu class="menu-top">
+   <a href="#" class="menu-top-link">Старки</a>
+   <a href="#" class="menu-top-link">Аррены</a>
+   <a href="#" class="menu-top-link">Тиррелы</a>
+   <a href="#" class="menu-top-link selected">Грейджои</a>
+   <a href="#" class="menu-top-link">Баратеоны</a>
+   <a href="#" class="menu-top-link">Мартеллы</a>
+   <a href="#" class="menu-top-link">Ланнистеры</a>
+   <a href="#" class="menu-top-link">Таргариены</a>
+</menu>
+<script>
+   const menuLink= document.getElementsByClassName('menu-top-link');
+   for (let i=0; i<menuLink.length; i++){
+       menuLink[i].addEventListener('click',chooseMenuItem)
+   }
+
+
+   function chooseMenuItem(){
+
+       let elem = this.previousElementSibling;
+       console.log(elem === true);
+       while (elem) {
+           elem.classList.remove('selected');
+           elem = elem.previousElementSibling;
+       }
+       elem = this.nextElementSibling;
+       while (elem) {
+           elem.classList.remove('selected');
+           elem = elem.nextElementSibling;
+       }
+
+       this.classList.add('selected');
+   }
+
+
+
+</script>
+</body>
+</html>

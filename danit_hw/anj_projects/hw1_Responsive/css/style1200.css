@@ -1,0 +1,66 @@
+/*_____Header Styles_____*/
+
+.header__content {
+	padding-top: 58px;
+	margin-left: 37px;
+}
+
+.header__text {
+	font-size: 62px;
+}
+
+.header__link {
+	font-size: 38px;
+	margin-top: 53px;
+}
+
+/*_____Main-Menu Styles_____*/
+
+.main-menu__text {
+	font-size: 43px;
+}
+
+/*_____Our-Menu Styles_____*/
+
+.our-menu__text-big {
+	font-size: 40px;
+}
+
+.our-menu__text-small {
+	font-size: 24px;
+}
+
+.our-menu__logo {
+	width: 120px;
+	height: 98px;
+}
+
+.menu-column__header {
+	font-size: 40px;
+}
+
+.chapter__name {
+	font-size: 31px;
+}
+
+.chapter__icon {
+	font-size: 48px;
+}
+
+.dish__name {
+	font-size: 27px;
+}
+
+.dish__price {
+	font-size: 27px;
+}
+
+.dish__description {
+	font-size: 17.5px;
+}
+
+/*_____Footer Styles_____*/
+
+.footer__content {
+	margin: 0 37px;
+}

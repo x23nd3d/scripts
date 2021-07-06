@@ -1,0 +1,370 @@
+.body {
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    max-width: 294px;
+    width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.navbar {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    position: relative;
+    background: #373c3f;
+}
+
+@media only screen and(min-width: 576px) and (max-width: 641px) {
+    /*.container {*/
+    /*    max-width: 576px;*/
+    /*}*/
+    .navbar {
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+}
+
+.navbar-navigation-text {
+    position: relative;
+    bottom: 4px;
+    margin-left: 5px;
+    font-size: 12px;
+    color: #ffffff;
+    letter-spacing: 0.98px;
+}
+
+.navbar-toggler {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    background: #202529;
+    text-decoration: none;
+}
+
+.navbar-toggler-icon {
+    position: relative;
+    top: -2px;
+    left: 2px;
+    width: 15px;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 1px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-4px, 4px);
+    transform: rotate(-45deg) translate(-4px, 4px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(47deg) translate(-2px, -1px);
+    transform: rotate(45deg) translate(-2px, -1px);
+}
+
+.navbar-nav {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    display: none;
+    background: #fafafa;
+    border: 1px solid #dddddd;
+}
+
+.nav-item {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 78px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.nav-links {
+    padding-left: 12px;
+    padding-right: 15px;
+    color: #444444;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.navbar-logo {
+    display: none;
+}
+
+.header {
+    margin-top: 1px;
+    padding-bottom: 94px;
+    background: url('../image/header-section-bg.png') no-repeat center/cover;
+}
+
+.header-title {
+    padding-top: 12px;
+    padding-left: 7px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    word-spacing: 2px;
+}
+
+.header-title-part-too {
+    padding-top: 7px;
+    padding-left: 7px;
+    padding-bottom: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.header-link {
+    padding-left: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #a6d6e0;
+    text-decoration: none;
+}
+
+.menu {
+    margin-top: 5px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-100 {
+    flex: 0 0 100%;
+}
+
+.menu-category {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    flex: 0 0 100%;
+    text-decoration: none;
+}
+
+.pizza {
+    background: url('../image/Pizza.png') no-repeat bottom/cover;
+    background-position: -65px -234px;
+}
+
+.text-pizza {
+    position: relative;
+    right: 34px;
+}
+
+.salads {
+    margin-top: 1px;
+    background: url('../image/Salads_UI_UX.png') no-repeat -36px -223px/cover;
+    /*background-position: -36px -223px;*/
+}
+
+.text-salads {
+    position: relative;
+    right: 24px;
+}
+
+.dessert {
+    margin-top: 1px;
+    background: url('../image/Desserts.png') no-repeat center/cover;
+    background-position: -25px -35px;
+}
+
+.text-desserts {
+    position: relative;
+    right: 38px;
+}
+
+.menu-category-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.menu-category-square {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 71px;
+    height: 74px;
+    background: #acd8ad;
+}
+
+.menu-category-link-arrow {
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.menu-footer {
+    position: relative;
+    margin-top: 25px;
+}
+
+.menu-footer-title {
+    position: absolute;
+    top: -2px;
+    right: 8px;
+    font-size: 20px;
+    color: #3f4043;
+    text-transform: uppercase;
+}
+
+.menu-footer-description {
+    position: relative;
+    top: 17px;
+    right: 4px;
+    font-size: 10px;
+    color: #cbccce;
+}
+
+.menu-product-container {
+    margin-top: 33px;
+}
+
+.menu-section-bg {
+    background: #3f4043;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.section-title {
+    color: #acd8ad;
+    padding-left: 5px;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 13px;
+    padding-left: 4px;
+}
+
+.title-small {
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #3f4043;
+}
+
+.titles-logo-sharp {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url('../image/titles-logo-sharp.png') no-repeat;
+}
+
+.menu-title-container {
+    padding-left: 4px;
+    padding-right: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-product {
+    margin-top: 15px;
+}
+
+.menu-product-title {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+}
+
+.menu-product-price {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.menu-product-description {
+    margin-top: 4px;
+    padding-left: 5px;
+    font-size: 9px;
+    color: #3f4043;
+    text-align: justify;
+    letter-spacing: -0.1px;
+}
+
+.title-small-section-too {
+    margin-top: 10px;
+    padding-bottom: 4px;
+}
+
+.menu-titles-small-icon {
+    position: relative;
+    right: 10px;
+}
+
+.menu-section-bg-section-too {
+    margin-top: 36px;
+    padding-left: 15px;
+    background: #acd8ad;
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.icons-menu {
+    font-size: 24px;
+    color: #acd8ad;
+}
+
+.title-container-top {
+    margin-top: 19px;
+}
+
+.footer {
+    margin-top: 53px;
+    background: #acd8ad;
+}
+
+.footer-copy {
+    padding-top: 13px;
+    padding-bottom: 11px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-copy-title {
+    padding-left: 6px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 0.7px;
+}
+
+.footer-copy-title-part-too {
+    padding-top: 6px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 0.79px;
+}

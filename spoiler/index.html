@@ -1,0 +1,188 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--    <link rel="stylesheet" href="css/style.css" >-->
+<!--</head>-->
+<!--<body>-->
+<!--&lt;!&ndash;<div>Hello</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div id="theDiv">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div>World</div>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div>again</div>&ndash;&gt;-->
+<!--&lt;!&ndash;    &lt;!&ndash; This is comment &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash; -->
+
+<!--<div> Users </div>-->
+<!--    <ul>-->
+<!--    <li>John</li>-->
+<!--        <li>Adam</li>-->
+<!--    </ul> &ndash;&gt;-->
+
+
+<!--&lt;!&ndash;<script>&ndash;&gt;-->
+<!--&lt;!&ndash;    for (let i = 0;&ndash;&gt;-->
+<!--&lt;!&ndash;         i < document.getElementById("theDiv").children.length;&ndash;&gt;-->
+<!--&lt;!&ndash;         i++) {&ndash;&gt;-->
+<!--&lt;!&ndash;        console.log(document.getElementById("theDiv").children[i]);&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+
+
+
+
+
+
+
+
+<!--<h1 class="page-title">Девиз Дома</h1>-->
+<!--<div class="modal">-->
+<!--    h2{Несгибаемые. }-->
+
+<!--</div>-->
+
+
+
+
+
+
+<!--<script src="script.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--// MODAL-->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Modal Window</title>-->
+<!--    <link rel="stylesheet" href="css/style.css">-->
+<!--</head>-->
+
+<!--<body>-->
+
+<!--<h1 class="page-title">Девиз Дома PE10</h1>-->
+
+<!--<a href="#" id="show-slogan" data-target="modal-slogan" data-slogan-text="Несгибаемые. Несломленные. Непокоренные." class="btn">Показать слоган</a>-->
+
+<!--<div id="modal-slogan" class="modal">-->
+<!--    <a href="#" class="modal-cross">X</a>-->
+<!--    <h2 class="modal-title">Несгибаемые. Несломленные. Непокоренные.</h2>-->
+<!--</div>-->
+
+<!--<a href="#" id="show-no-slogan" data-target="modal-no-slogan" class="btn">Показать не слоган</a>-->
+
+<!--<div id="modal-no-slogan" class="modal">-->
+<!--    <a href="#" class="modal-cross">X</a>-->
+<!--    <h2 class="modal-title">А здесь нет слогана</h2>-->
+<!--</div>-->
+
+<!--<a href="#" id="show-cat" data-target="modal-cat" class="btn">Показать кота</a>-->
+
+<!--<div id="modal-cat" class="modal">-->
+<!--    <a href="#" class="modal-cross">X</a>-->
+<!--    <img src="cat.jpg" alt="">-->
+<!--</div>-->
+
+<!--<script>-->
+<!--    const btns = document.getElementsByClassName("btn");-->
+<!--    for (let i = 0; i < btns.length; i++) {-->
+<!--        btns[i].addEventListener("click", showModal);-->
+<!--    }-->
+
+<!--    const modalCross = document.getElementsByClassName("modal-cross");-->
+
+<!--    for (let i = 0; i < modalCross.length; i++) {-->
+<!--        modalCross[i].addEventListener("click", closeModal);-->
+<!--    }-->
+
+<!--    function showModal() {-->
+<!--        // this = ссылка на тег, на котором сработало событие-->
+
+<!--        const modal = document.getElementById(this.dataset.target);-->
+<!--        modal.classList.add("active");-->
+<!--        //            modal.style.display = "block";-->
+<!--        //            console.log(this);-->
+<!--        //            this.style.fontSize = "150%";-->
+
+
+<!--        // document.getElementById("modal-slogan");-->
+<!--        //            console.log(modal);-->
+<!--    }-->
+
+<!--    function closeModal() {-->
+<!--        const modal = this.closest(".modal");-->
+<!--        modal.classList.remove("active");-->
+<!--    }-->
+
+<!--    //        const btnSloganShow = document.getElementById("show-slogan");-->
+<!--    //        btnSloganShow.addEventListener("click", showModal);-->
+<!--    //-->
+<!--    //-->
+<!--    //        const btnShowNoSlogan = document.getElementById("show-no-slogan");-->
+<!--    //        btnShowNoSlogan.addEventListener("click", showModal);-->
+
+
+
+
+<!--    //        console.log(document.getElementById("show-slogan").dataset);-->
+
+<!--</script>-->
+<!--</body>-->
+
+<!--</html>-->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<button class="collapse-btn" data-target="text">Show</button>
+<p id="text" class="hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Ad corporis deleniti dolore error eum ex explicabo facilis illum incidunt laboriosam nemo
+    nobis nostrum porro quasi repellat sequi suscipit, voluptas voluptatum?</p>
+
+
+
+
+<script>
+
+const collapseBtn = document.getElementsByClassName('collapse-btn');
+for (let i = 0; i < collapseBtn.length; i++) {
+
+    collapseBtn[i].addEventListener('click', collapseToggle);
+}
+
+
+
+    function collapseToggle() {
+    const paragraph =  document.getElementById(this.dataset.target);
+    paragraph.classList.toggle('hidden');
+    console.log(paragraph);
+
+    if (this.textContent === 'Hidden') {
+        this.textContent = 'Show';
+    } else { this.textContent = 'Hidden';
+    }
+
+
+    }
+
+</script>
+
+
+</body>
+</html>

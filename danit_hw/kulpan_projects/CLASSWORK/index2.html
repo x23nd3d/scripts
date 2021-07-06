@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .tabs {
+            display: flex;
+            justify-content: center;
+        }
+        .collapse-button {
+            padding: 10px 20px;
+            margin: 20px;
+            background-color: darkred;
+        }
+        .text {
+            position: absolute;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="tabs">
+<button class="collapse-button" data-target="buttonOne">Show</button>
+<button class="collapse-button" data-target="buttonToo">Show</button>
+<button class="collapse-button" data-target="buttonThree">Show</button>
+</div>
+<div class="text" id="buttonOne">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium atque beatae
+    consequuntur
+    cum dicta dolore dolores earum ex facere fugiat laudantium libero magnam minima molestiae molestias natus non
+    nostrum pariatur provident quas quibusdam quis quos recusandae repellendus, saepe sapiente voluptas. Asperiores
+    autem consequuntur ipsa iste nemo obcaecati repudiandae, sapiente velit!
+</div>
+<div class="text" id="buttonToo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequatur
+    cupiditate dicta,
+    doloremque possimus qui saepe sit temporibus ullam vero? Ad alias aspernatur assumenda ducimus enim, et eum
+    explicabo libero minus nesciunt nisi perferendis porro quaerat quidem ratione rem repudiandae, saepe vitae voluptas
+    voluptatem. Beatae optio soluta temporibus vel voluptatum!
+</div>
+<div class="text" id="buttonThree">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur dolor expedita illum, obcaecati
+    reprehenderit? Accusantium asperiores at atque cumque dolore doloribus eius eligendi error explicabo facere fugiat
+    inventore itaque laboriosam laudantium minus, molestiae nam necessitatibus nihil nobis perferendis placeat quaerat
+    quisquam, quod sint sit suscipit temporibus vero vitae voluptates?
+</div>
+<script>
+    const collapseBtn = document.getElementsByClassName('collapse-button');
+    for (let i = 0; i < collapseBtn.length; i++) {
+        collapseBtn[i].addEventListener("click", showButtons);
+    }
+
+    function showButtons() {
+        const text = document.getElementById(this.dataset.target);
+        text.classList.toggle('text');
+        if (this.textContent === "Hidden") {
+            this.textContent = "Show";
+        } else {
+            this.textContent = "Hidden";
+        }
+    }
+
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,153 @@
+body {
+
+    margin: 0px;
+    height: auto;
+}
+
+.logo {
+
+    position: absolute;
+    left: 770px;  
+    width: 350px;
+    height: 350px;
+    top: 150px;   
+    transition: 0.5s;
+    z-index: 2;
+}
+
+
+
+
+.logo2 {
+
+    position: absolute;
+    left: 770px;  
+    width: 350px;
+    height: 350px;
+    top: 150px;   
+    transition: 0.5s;
+    z-index: 1;
+}
+
+
+.logo:hover {
+
+    transition: 0.5s;
+      opacity: 0;
+      transform: rotate(360deg);
+    
+        
+    }
+
+.logo2:hover {
+
+transition: 0.3s;
+  opacity: 0;
+  transform: rotate(360deg);
+  
+}
+
+
+
+
+p {
+
+    position: absolute;
+    margin-top: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+.new {
+
+    position: absolute;
+    margin-top: 125px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+
+       
+   
+    overflow: hidden;  
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    letter-spacing: .15em; 
+    animation: 
+      typing 2.1s steps(30, end),
+      blinking-cursor .5s step-end infinite;
+  }
+  
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 27% }
+  }
+  
+
+  @keyframes blinking-cursor {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+
+   
+
+}
+
+
+/* .new:hover {
+
+    
+
+    overflow: hidden;  
+    border-right: .15em solid black; 
+    white-space: nowrap; 
+    letter-spacing: .15em; 
+
+    animation: 
+
+      typing 2.1s steps(30, end),
+      blinking-cursor .5s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 27% }
+  }
+  
+
+  @keyframes blinking-cursor {
+    from, to { border-color: transparent }
+    50% { border-color: black; }
+  }
+
+ */
+
+button {
+    margin-top: 650px;
+    margin-left: 870px;
+    /* position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    border-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    padding: 30px;
+    opacity: 0.50;
+    transition: 0.50s;
+
+
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    opacity: 100;
+    border-style: none;
+    transition: 0.25s;
+
+
+}

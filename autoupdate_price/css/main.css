@@ -1,0 +1,9 @@
+.focused {
+	
+	outline:1px solid green;
+
+}
+
+.hidden {
+	display: none;
+}

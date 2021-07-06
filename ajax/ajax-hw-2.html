@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" id="bootstrap-css"
+          rel="stylesheet">
+
+
+    <style>
+
+        .lds-ellipsis {
+            display: inline-block;
+            position: relative;
+            width: 64px;
+            height: 64px;
+        }
+
+        .lds-ellipsis div {
+            position: absolute;
+            top: 27px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #1d1b1a;
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+
+        .lds-ellipsis div:nth-child(1) {
+            left: 6px;
+            animation: lds-ellipsis1 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(2) {
+            left: 6px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(3) {
+            left: 26px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(4) {
+            left: 45px;
+            animation: lds-ellipsis3 0.6s infinite;
+        }
+
+        @keyframes lds-ellipsis1 {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes lds-ellipsis3 {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        @keyframes lds-ellipsis2 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(19px, 0);
+            }
+        }
+
+        .content {
+            transition: all .4s;
+            width: 75vw;
+            border-left: 1px solid #80808014;
+            border-right: 1px solid #80808014;
+            margin: 0 auto;
+            background-color: rgba(226, 226, 226, 0.12);
+        }
+
+        .content:hover {
+            box-shadow: #cccccc94 0px 0px 9px 12px;
+            background-color: rgba(181, 181, 181, 0.29);
+        }
+
+        .name {
+            font-size: 25px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .gender {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 20px 15px;
+            grid-gap: 20px 12px;
+        }
+
+        .homeworld {
+            font-size: 14px;
+            text-align: justify;
+            font-style: italic;
+            color: #828282;
+            margin-bottom: 10px;
+        }
+
+        .show-btn {
+            cursor: pointer;
+            display: inline-block;
+            background: #8d8d8d1c;
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="content">
+
+    <div class="list">
+
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+
+    getAjax('https://swapi.co/api/people/', function (data) {
+        let array = data.results;
+        console.log(array);
+        render(array);
+    });
+
+    function showStarships(ajax, btn, container) {
+        ajax.forEach(starships => {
+            getAjax(starships, function (data) {
+                let li = document.createElement('li');
+                li.textContent = data.name;
+                container.appendChild(li);
+                if (!ajax ) {
+                  console.log('no ships')
+              }
+            })
+        })
+
+    }
+
+    function render(items) {
+        items.forEach(chars => {
+            getAjax(`${chars.homeworld}`, function (data) {
+                let div = document.createElement('div');
+                div.className = 'character';
+                let container = document.querySelector('.list');
+                container.appendChild(div);
+                div.innerHTML = `
+            <div class="name">${chars.name}</div>
+            <div class="gender">Gender: ${chars.gender}</div>
+            <div class="homeworld"><b>Planet:</b> ${data.name}</div>`;
+                let starships = document.createElement('div');
+                starships.className = 'starships';
+                let btn = document.createElement('a');
+                btn.className = 'show-btn';
+                btn.textContent = 'Show starships';
+                btn.addEventListener('click', function () {
+                    showStarships(chars.starships, this, starships);
+                });
+
+                div.appendChild(btn);
+                div.appendChild(starships);
+
+            });
+        });
+        }
+
+
+    function getAjax(url, action) {
+        $.ajax({
+            type: 'GET',
+            url: url,
+            dataType: "json",
+            success: function (data) {
+                action(data);
+            },
+            error: function (data) {
+                console.log(data);
+            },
+        });
+    }
+
+</script>
+</body>
+
+</html>

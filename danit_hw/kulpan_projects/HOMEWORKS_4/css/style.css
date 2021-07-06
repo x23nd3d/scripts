@@ -1,0 +1,350 @@
+@font-face {
+    font-family: 'Verdana', sans-serif;
+    src: url('../fonts/Verdana.ttf');
+}
+
+body {
+    margin: 0;
+    position: relative;
+    font-size: 14px;
+    background: url("../img/cover.png") no-repeat fixed;
+    background-size: cover;
+    font-family: 'Verdana', sans-serif;
+}
+
+a {
+    font-weight: 400;
+    color: #3cb878;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #329a65;
+    transition-duration: .7s;
+}
+
+.clearfix {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* MENU */
+.menu {
+    background-color: rgba(0, 0, 0, 0.41);
+    width: 100%;
+    height: 54px;
+}
+
+.menu-container {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+
+/* Logotype */
+.logo-brand {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 21px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.logo-brand:hover {
+    transition-duration: .7s;
+    color: #3cb878;
+}
+
+/* Logotype End */
+.right-block {
+    float: right;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+span.welcome {
+    display: inline-block;
+    vertical-align: super;
+    padding-left: 25px;
+}
+
+/* Sprite Start */
+.calendar {
+    padding-right: 20px;
+    display: inline-block;
+    background-image: url("../img/css_sprites.png");
+    background-position: -20px -160px;
+    width: 19px;
+    height: 19px;
+
+}
+
+.calendar:hover {
+    /*padding-right: 20px;*/
+    display: inline-block;
+    background-image: url("../img/css_sprites.png");
+    background-position: -20px -199px;
+    width: 19px;
+    height: 19px;
+    transition-duration: .7s;
+
+}
+
+.forum {
+    padding-right: 20px;
+    display: inline-block;
+    background-image: url("../img/css_sprites.png");
+    background-position: -20px -0px;
+    width: 28px;
+    height: 20px;
+}
+
+.forum:hover {
+    display: inline-block;
+    background-image: url("../img/css_sprites.png");
+    background-position: -20px -40px;
+    width: 28px;
+    height: 20px;
+    transition-duration: .7s;
+}
+
+.journey {
+    padding-right: 28px;
+    display: inline-block;
+    background-image: url("../img/css_sprites.png");
+    background-position: -20px -80px;
+    width: 20px;
+    height: 20px;
+    border-right: 1px solid #312e2c;
+}
+
+.journey:hover {
+    display: inline-block;
+    background-image: url("../img/css_sprites.png");
+    background-position: -20px -120px;
+    width: 20px;
+    height: 20px;
+    transition-duration: .7s;
+}
+
+.flex-box {
+    min-height: calc(100vh - 54px );
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.modal {
+    /*margin: auto;*/
+    display: flex;
+    height: 584px;
+    width: 444px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.52);
+
+
+}
+
+.modal-container {
+    position: relative;
+    padding: 20px 62px;
+    font-family: 'Verdana', sans-serif;
+}
+
+.login-right {
+    float: right;
+}
+
+.login-right:hover {
+    text-decoration: underline;
+    transition-duration: .7s;
+}
+.sign-up > span {
+    margin-top: -4px;
+    display: inline-block;
+    color: #434343;
+    font-size: 20px;
+    font-weight: 400;
+    text-shadow: 0 0 1px;
+}
+.sign-up::before {
+    content: "";
+    height: 18px;
+    width: 18px;
+    display: block;
+    position: absolute;
+    margin-left: -62px;
+    background-color: #39ba78;
+}
+
+/* BUTTONS BATON */
+.btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    width: 158px;
+    height: 46px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.icons {
+    float: left;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.btn.facebook {
+    background-color: #305db8;
+
+}
+
+.icons-facebook::after {
+    content: "";
+    width: 1px;
+    height: 28px;
+    top: 13%;
+    left: 22.5%;
+    opacity: .1;
+    display: block;
+    position: absolute;
+    background-color: #312e2c;
+}
+
+.btn.facebook:hover {
+    background-color: #264b96;
+    transition-duration: .7s;
+}
+
+.btn.google {
+    background-color: #df4a32;
+}
+
+.icons-google::after {
+    content: "";
+    width: 1px;
+    height: 28px;
+    top: 13%;
+    right: 39%;
+    opacity: .1;
+    display: block;
+    position: absolute;
+    background-color: #312e2c;
+}
+
+.btn.google:hover {
+    background-color: #c3412c;
+    transition-duration: .7s;
+}
+
+/* BUTTONS BATON END */
+.or {
+    padding-top: 12px;
+    text-align: center;
+}
+
+.or::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: #ddd;
+    width: 31%;
+    position: absolute;
+    top: 25.1%;
+    left: 64px;
+    z-index: 1;
+}
+
+.or::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: #ddd;
+    width: 31%;
+    position: absolute;
+    top: 25.1%;
+    right: 64px;
+    z-index: 1;
+
+}
+
+
+.form-input {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #ffffff;
+    height: 46px;
+    margin-bottom: 10px;
+    width: 94.5%;
+    display: block;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+    outline: none;
+    font-weight: bold;
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.21);
+}
+
+input[type=text], input[type=password], input[type=email] {
+    padding-left: 15px;
+    font-size: 14px;
+    color: #434343;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox]:checked + .pseudocheckbox::before {
+    content: "\2714";
+}
+
+.pseudocheckbox::before {
+    content: "\00A0";
+    display: inline-block;
+    box-sizing: border-box;
+    margin-top: 14px;
+    margin-right: 6px;
+    margin-bottom: 20px;
+    width: 20px;
+    height: 18px;
+    background-color: white;
+    border: 1px solid #B0B0B0;
+    border-radius: 2px;
+    vertical-align: baseline;
+
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 16px;
+    color: #39ba78;
+}
+
+.create-account {
+    display: block;
+    border: none;
+    border-radius: 3px;
+    background-color: #39ba78;
+    width: 322px;
+    height: 46px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.create-account:hover {
+    cursor: pointer;
+    background-color: #329a65;
+    transition-duration: .7s;
+}

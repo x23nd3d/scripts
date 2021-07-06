@@ -1,0 +1,293 @@
+/* ----------- COMMON STYLES START ---------------- */
+
+@font-face {
+    font-family: 'Verdana';
+    src: url('../fonts/verdana.ttf');
+}
+
+.single-page {
+    font-family: 'Verdana', sans-serif;
+}
+
+.main-container {
+    background-size: cover;
+    background-image: url(../img/rana-sawalha-364253-unsplash.png);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.container {
+    width: 1210px;
+    margin: 0 auto;
+}
+/* ----------- COMMON STYLES END ---------------- */
+
+/* ----------- HEADER START ---------------- */
+.header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color:  rgba(0, 0, 0, 0.41);
+}
+
+.header_content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-logo {
+    text-decoration: none;
+}
+
+.header-logo-text {
+    color:  #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.header-right-col {
+	display: flex;
+	align-items: center;
+}
+
+.change-theme-button {
+	margin-right: 30px;
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.5s;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid transparent;
+}
+
+.header-icon {
+    background-repeat: no-repeat;
+    display: inline-block;
+    align-items: center;
+    margin-right: 28px;
+    transition: 0.5s;
+}
+
+.sprite-ic_caledar {
+    width: 19px;
+    height: 19px;
+    background-position: -5px -5px;
+}
+
+.sprite-ic_caledar:hover {
+    background-position: -34px -5px;
+}
+
+.sprite-ic_forum {
+    width: 28px;
+    height: 20px;
+    background-position: -63px -5px;
+}
+
+.sprite-ic_forum:hover {
+    background-position: -101px -5px;
+}
+
+.sprite-ic_journey {
+    width: 20px;
+    height: 20px;
+    background-position: -139px -5px;
+}
+
+.sprite-ic_journey:hover {
+    background-position: -169px -5px;
+}
+
+.header-text {
+    font-size: 14px;
+    color: #fff;
+    border-left: 1px #fff solid;
+    padding-left: 28px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: none;
+}
+/* ----------- HEADER END ---------------- */
+
+/* ----------- MAIN-CONTENT START ---------------- */
+.main-content {
+	display: flex;
+    justify-content: center;
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.registration-form {
+    width: 324px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px 60px;
+    position: relative;
+}
+
+.foursquare {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+}
+
+.form-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.sign-up-text {
+    font-size: 20px;
+    color: #434343;
+}
+.log-in-text {
+    font-size: 14px;
+}
+
+.network-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.network-button {
+    width: 157px;
+    height: 46px;
+    border-radius: 3px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.facebook {
+    background-color: #305db8;
+}
+
+.facebook:active {
+    background-color: #264b96;
+}
+
+.google {
+	background-color: #df4a32;
+}
+
+.google:active {
+	background-color: #c3412c;
+}
+
+.network-button-text {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.network-button-text-item {
+    font-size: 16px;
+    color: #fff;
+}
+
+.network-button-logo {
+	width: 48px;
+    text-align: center;
+}
+
+.network-button-logo.fb {
+    border-right: 1px #1d4187 solid;
+}
+
+.network-button-logo.goo {
+    border-right: 1px #b03823 solid;
+}
+
+.fab {
+    color: #fff;
+    font-size: 20px;
+}
+
+.separator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 18px 0;
+}
+
+.dividing-line {
+    width: 135px;
+    height: 1px;
+    background-color: #eaeaea;
+}
+
+.separator-text {
+	font-size: 14px;
+    color: #848484;
+}
+
+.input-area {
+	width: 305px;
+    height: 46px;
+    margin-bottom: 9px;
+    border-radius: 3px;
+    padding-left: 17px;
+    font-size: 14px;
+    color: #434343;
+    border: 1px solid #bebebe;
+}
+
+.input-area:focus {
+	box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.21);
+    outline: none;
+}
+
+.checkbox {
+	margin-top: 10px;
+}
+
+.checkbox-label {
+    font-size: 14px;
+    color: #434343;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label::before {
+    content: "";
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    border: 1px solid #bebebe;
+    border-radius: 2px;
+    margin: 0 10px -3px 0;
+}
+
+input[type="checkbox"]:checked + label::before {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.complete-button {
+    width: 322px;
+    height: 46px;
+    color: #ffffff;
+    font-size: 16px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    margin-top: 25px;
+}
+
+.complete-button:active {
+    outline: none;
+}
+/* ----------- MAIN-CONTENT END ---------------- */

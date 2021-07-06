@@ -1,0 +1,11 @@
+{{# if userToken }}
+        <div class="base-container">
+            <div class="header-inner">
+                <a href="#" class="logo"><span>la</span> Hospital</a>
+                <button class="btn btn-secondary add-visit" id="addVisitButton" style="display: block;">Add a visit</button>
+                <button class="login" id="logInButton">Log out</button>
+            </div>
+        </div>
+{{else}}
+    {{header}}
+{{/if}}

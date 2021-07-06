@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collapse</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+<button class="collapse-btn" data-target="text">Show</button>
+<p id="text" class="hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, omnis.</p>
+<script>
+    const collapseBtn = document.getElementsByClassName("collapse-btn");
+    for (let i = 0; i < collapseBtn.length; i++) {
+        collapseBtn[i].addEventListener("click", collapseToggle);
+    }
+    function collapseToggle(){
+        const paragraph = document.getElementById(this.dataset.target);// const paragraph = document.getElementById("text");
+        paragraph.classList.toggle("hidden");
+        // if(!paragraph.classList.contains("hidden")) {
+        //     paragraph.classList.add("arrow-down");
+        // }
+        // else {
+        //     paragraph.classList.remove("arrow-down");
+        // }
+
+        // if(this.textContent === "Hidden"){
+        //     this.textContent = "Show";
+        // }
+        // else {
+        //     this.textContent = "Hidden";
+        // }
+    }
+</script>
+</body></html>

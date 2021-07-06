@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function access(name, age) {
+            let welcomeMessage = `Welcome, ${receivedName}`;
+            let refuseMessage = "You are not allowed to visit this website";
+            age = +age;
+            if (age < 18) {
+                alert(refuseMessage);
+            } else if (age <= 22) {
+                if (confirm("Are you sure you want to continue?")) {
+                    alert(welcomeMessage);
+                } else {
+                    alert(refuseMessage);
+                }
+            } else {
+                alert(welcomeMessage);
+            }
+            return true;
+        }
+
+        let receivedName = prompt("What is your name?", '');
+        let receivedAge = prompt("What is your age?", '');
+
+        while (!receivedName || !isNaN(receivedName) || isNaN(receivedAge) || !receivedAge) {
+            receivedName = prompt("What is your name?", receivedName);
+            console.log(receivedName);
+            receivedAge = prompt("What is your age?", receivedAge);
+            console.log(receivedAge);
+        }
+
+        access(receivedName, receivedAge);
+
+    </script>
+</body>
+
+</html>

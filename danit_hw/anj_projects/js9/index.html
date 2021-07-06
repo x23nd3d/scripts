@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function checkDate(newDate) {
+            let birth = newDate.split('.').join("");
+            return !isNaN(birth);
+
+        }
+        
+        function getAge(birthday) {
+            const now = new Date();
+
+            if (+birthday > +now) {
+                alert('Ошибка ввода данных');
+            }
+            else {
+                let age = (now.getFullYear() - birthday.getFullYear());
+                if (now.getMonth() < birthday.getMonth() || now.getDate() < birthday.getDate()) {
+                    age--;
+                };
+                return age;
+            };
+        }
+        
+        function getZodiac(birthday) {
+            const year = birthday.getYear();
+            const arrZodiac = [
+                {zod: 'Водолей', dateStart: new Date(year, 0, 21), dateEnd: new Date(year, 1, 18)},
+                {zod: 'Рыбы', dateStart: new Date(year, 1, 19), dateEnd: new Date(year, 2, 20)},
+                {zod: 'Овен', dateStart: new Date(year, 2, 21), dateEnd: new Date(year, 3, 19)},
+                {zod: 'Телец', dateStart: new Date(year, 3, 20), dateEnd: new Date(year, 4, 20)},
+                {zod: 'Близнецы', dateStart: new Date(year, 4, 21), dateEnd: new Date(year, 5, 21)},
+                {zod: 'Рак', dateStart: new Date(year, 5, 22), dateEnd: new Date(year, 6, 22)},
+                {zod: 'Лев', dateStart: new Date(year, 6, 23), dateEnd: new Date(year, 7, 22)},
+                {zod: 'Дева', dateStart: new Date(year, 7, 23), dateEnd: new Date(year, 8, 22)},
+                {zod: 'Весы', dateStart: new Date(year, 8, 23), dateEnd: new Date(year, 9, 23)},
+                {zod: 'Скорпион', dateStart: new Date(year, 9, 24), dateEnd: new Date(year, 10, 22)},
+                {zod: 'Стрелец', dateStart: new Date(year, 10, 23), dateEnd: new Date(year, 11, 21)},
+                {zod: 'Козерог', dateStart: new Date(year, 11, 22), dateEnd: new Date(year, 0, 21)}
+            ];
+            let zodiac = arrZodiac.filter(function(obj) {
+                if (+(obj.dateStart) <= +(birthday) && +(birthday) <= +(obj.dateEnd)) {
+                    return obj;
+                }
+            });
+            if (zodiac[0] == undefined) {
+                zodiac[0] = arrZodiac[11];
+            }
+            return (zodiac[0].zod);
+        }
+        
+        function getChineseZodiac(birthday) {
+            const arrChineseZodiac = [
+                'год Обезьяны',
+                'год Петуха',
+                'год Собаки',
+                'год Свиньи',
+                'год Крысы',
+                'год Быка',
+                'год Тигра',
+                'год Кролика',
+                'год Дракона',
+                'год Змеи',
+                'год Лошади',
+                'год Овцы'
+            ];
+            return arrChineseZodiac[birthday.getFullYear()%12];
+        }
+        
+        function countAge(date) {
+            let arrBirth = date.split('.');
+            const userBirth = new Date(arrBirth[2], (arrBirth[1]-1), arrBirth[0]);
+            
+            let userAge = getAge(userBirth);
+            alert(`Вам ${userAge} лет`);
+            
+            let userZodiac = getZodiac(userBirth);
+            alert(`Ваш знак зодиака: ${userZodiac}`);
+            
+            let userChineseZodiac = getChineseZodiac(userBirth);
+            alert(`По китайскому гороскопу Вы родились в ${userChineseZodiac}`);
+            
+            return true;
+        }
+        
+        let userBirthday = prompt("Введите дату рождения в формате dd.mm.yyyy", '');
+        while(!checkDate(userBirthday)) {
+            userBirthday = prompt("Введите дату рождения в формате dd.mm.yyyy", ''); 
+        }
+        
+        countAge(userBirthday);
+    </script>
+</body>
+</html>

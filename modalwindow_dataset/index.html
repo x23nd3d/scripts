@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Modal Window</title>
+   <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<h1 class="page-title">Девиз Дома PE10</h1>
+
+<a href="#" id="show-slogan" data-target="modal-slogan" data-slogan-text="Несгибаемые. Несломленные. Непокоренные." class="btn">Показать слоган</a>
+
+<div id="modal-slogan" class="modal">
+   <a href="#" class="modal-cross">X</a>
+   <h2 class="modal-title">Несгибаемые. Несломленные. Непокоренные.</h2>
+</div>
+
+<a href="#" id="show-no-slogan" data-target="modal-no-slogan" class="btn">Показать не слоган</a>
+
+<div id="modal-no-slogan" class="modal">
+   <a href="#" class="modal-cross">X</a>
+   <h2 class="modal-title">А здесь нет слогана</h2>
+</div>
+
+<a href="#" id="show-cat" data-target="modal-cat" class="btn">Показать кота</a>
+
+<div id="modal-cat" class="modal">
+   <a href="#" class="modal-cross">X</a>
+   <img src="cat.jpg" alt="">
+</div>
+
+<script>
+ const btns = document.getElementsByClassName("btn");
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", showModal);
+   }
+
+   const modalCross = document.getElementsByClassName("modal-cross");
+
+    for (let i = 0; i < modalCross.length; i++) {
+        modalCross[i].addEventListener("click", closeModal);
+    }
+
+    function showModal() {      // this = ссылка на тег, на котором сработало событие-->
+
+        const modal = document.getElementById(this.dataset.target);
+        modal.classList.add("active");
+        //            modal.style.display = "block";-->
+        //            console.log(this);-->
+        //            this.style.fontSize = "150%";-->
+
+
+        // document.getElementById("modal-slogan");-->
+        //            console.log(modal);-->
+    }
+
+    function closeModal() {
+        const modal = this.closest(".modal");
+        modal.classList.remove("active");
+    }
+
+    //        const btnSloganShow = document.getElementById("show-slogan");-->
+    //        btnSloganShow.addEventListener("click", showModal);-->
+    //-->
+    //-->
+    //        const btnShowNoSlogan = document.getElementById("show-no-slogan");-->
+    //        btnShowNoSlogan.addEventListener("click", showModal);-->
+
+
+
+
+  //        console.log(document.getElementById("show-slogan").dataset);-->
+
+</script>
+</body>
+
+</html>
+

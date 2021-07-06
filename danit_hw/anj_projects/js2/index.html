@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let inputNumber = prompt("Введите число", '');
+        
+        for (let checkingNumber = 1; checkingNumber <= inputNumber; checkingNumber++) {
+            let x = true;
+            for (let denominator = 2; denominator < checkingNumber; denominator++) {
+                if (checkingNumber % denominator == 0) {
+                    x = false;
+                    break;
+                }
+            }
+            if (x) {
+                console.log(checkingNumber);
+            }
+        }
+    </script>
+</body>
+</html>

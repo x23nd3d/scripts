@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+   <style>
+       .faq-btn {
+           text-decoration: none;
+           display: inline-block;
+       }
+   </style>
+</head>
+
+<body>
+
+<a href="#" class="faq-btn" data-text="Здесь скрыта вековая мудрость">Открой текст</a>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+   //        console.log($(".faq-btn").next("p.faq-text").length);
+   $(".faq-btn").click(function() {
+       if($(this).next("p.faq-text").length) {
+           $(this).next("p.faq-text").remove();
+       }
+       else {
+           $(this).after(`<p class="faq-text">${$(this).data("text")}</p>`)
+       }
+ 
+   });
+
+</script>
+</body></html>

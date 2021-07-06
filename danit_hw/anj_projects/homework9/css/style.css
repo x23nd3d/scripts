@@ -1,0 +1,176 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat.ttf');
+    src: url('../fonts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato.ttf');
+}
+
+.parallax-section {
+    width: 100%;
+    background-size: cover;
+    display: table;
+    background-attachment: fixed;
+}
+
+.parallax-section-1 {
+    background-image: url(../img/bg1.jpg);
+    height: 100vh;
+}
+
+.parallax-section-2 {
+    background-image: url(../img/bg2.jpg);
+    height: 380px;
+}
+
+.parallax-section-3 {
+    background-image: url(../img/bg3.jpg);
+    height: 70vh;
+}
+
+.parallax-section-4 {
+	background-image: url(../img/bg4.jpg);
+    height: 500px;
+}
+
+.white-section {
+    height: 400px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.content-section {
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+	position: absolute;
+    bottom: 145px;
+    left: 80px;
+}
+
+.content-container {
+	text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+	font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Montserrat';
+}
+
+.section-description {
+    font-size: 17px;
+    font-family: 'Lato';
+}
+
+/*___________MAIN SECTION____________*/
+
+.main-logo-text {
+    color: #fff;
+    font-weight: 700;
+    font-size: 48px;
+    font-family: 'Montserrat';
+}
+
+.main-logo-description {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 12px;
+    font-family: 'Lato';
+}
+
+.slogan {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 880px;
+    border: 1px solid #fff;
+    font-size: 54px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 40px;
+    font-family: 'Montserrat';
+}
+
+.slogan div {
+    display: inline-block;
+}
+
+.slogan-start {
+	background-color: #fff;
+    color: #f1ad1d;
+    padding: 40px 30px;
+}
+
+.slogan-end {
+	color: #fff;
+    margin-left: 10px;
+}
+
+/*____________WHITE SECTION__________*/
+
+.white-section-title {
+    color:  #333333;
+}
+
+.white-section-description {
+    color:  #4d4943;
+    margin-top: 35px;
+}
+
+.delimiter {
+	background-color:  #f1ad1d;
+    width: 60px;
+    height: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 52px;
+}
+
+/*__________PARALLAX SECTION_________*/
+
+.parallax-section-title {
+    color:  #fff;
+}
+
+.parallax-section-title span {
+    color:  #f1ad1d;
+}
+
+.parallax-delimiter {
+	margin-top: 60px;
+}
+
+.parallax-logo-container {
+    width: 850px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.parallax-section-description {
+    color:  #fff;
+    margin-top: 60px;
+    width: 800px;
+    line-height: 30px;
+}
+
+.parallax-section-description span {
+    color:  #f1ad1d;
+}
+
+.delimiter-2 {
+    background-color:  #ffffff;
+    width: 281px;
+    height: 3px;
+    margin-top: 44px;
+    margin-right: auto;
+    margin-left: auto;
+}

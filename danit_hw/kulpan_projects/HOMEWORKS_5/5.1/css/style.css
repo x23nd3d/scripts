@@ -1,0 +1,202 @@
+@font-face {
+    src: url("../fonts/Arimo-Regular.ttf");
+}
+
+body {
+    font-family: Arimo-Regular, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    background-color: #3a4965;
+}
+
+/* Container */
+.container {
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+/* Container END */
+.table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-spacing: 10px;
+    background-color: #f2f2f2;
+    box-shadow: 1px 1px 19px 5px;
+}
+
+.table-row-content.price-bg-white {
+    height: 86px;
+    background-color: #fafafa;
+}
+
+.price-title {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.price-big {
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.price-too {
+    bottom: 25px;
+    position: relative;
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.price-month {
+    right: 38px;
+    position: relative;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* Table TITLES RGB*/
+.table-row-content.price-title-big {
+    margin-top: 0;
+    color: #484848;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.table-row-content.title-bg {
+    border: none;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 28px;
+    box-shadow: none;
+}
+
+.table-row-content.standart {
+    background-color: #89c331;
+    font-size: 24px;
+}
+
+.table-row-content.ultimate {
+    background-color: #f04a56;
+    font-size: 30px;
+}
+
+.table-row-content.premium {
+    background-color: #20807c;
+    font-size: 24px;
+}
+
+/* Table TITLES RGB END*/
+.table-row-content {
+    padding: 0;
+    color: #484848;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    border-right: 1px solid #d4d4d4;
+    border-left: 1px solid #d4d4d4;
+    box-shadow: 4px 7px 9px 0;
+    background-color: #f2f2f2;
+    width: 277px;
+    height: 69px;
+}
+
+.table-caption {
+    border: none;
+    width: 310px;
+}
+.icon {
+    padding-right: 5px;
+    color: #848484;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.gray {
+    color: #484848;
+    font-size: 16px;
+    font-weight: 400;
+    border-right: 1px solid #d4d4d4;
+    border-left: 1px solid #d4d4d4;
+    box-shadow: 4px 7px 9px 0;
+    text-align: center;
+    background-color: #e3e3e3;
+    width: 277px;
+    height: 69px;
+}
+
+.table-row-content.bg-extra-gray {
+    background-color: #dddddd;
+}
+
+.table-row-content.bg-gray {
+    height: 120px;
+    background-color: #eeeeee;
+}
+
+.table-row-content.bg-white {
+    background: #f4f4f4;
+}
+/* Button > Batton > BTN */
+.btn {
+    border: none;
+    border-radius: 5px;
+    width: 192px;
+    height: 49px;
+
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.btn-contact {
+    background-color: #484848;
+    border-bottom: 5px solid #404040;
+}
+
+.btn-contact:hover {
+    padding-top: 5px;
+    cursor: pointer;
+    background-color: #404040;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, .35) inset;
+}
+
+.btn-green {
+    background-color: #89c331;
+    border-bottom: 5px solid #79b027;
+}
+
+.btn-green:hover {
+    padding-top: 5px;
+    cursor: pointer;
+    background-color: #79b027;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, .35) inset;
+}
+
+.btn-red {
+    background-color: #f04a56;
+    border-bottom: 5px solid #df3a46;
+}
+
+.btn-red:hover {
+    padding-top: 5px;
+    cursor: pointer;
+    background-color: #df3a46;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, .35) inset;
+}
+
+.btn-blue {
+    background-color: #20807c;
+    border-bottom: 5px solid #16736f;
+}
+
+.btn-blue:hover {
+    padding-top: 5px;
+    background-color: #16736f;
+    cursor: pointer;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, .35) inset;
+}

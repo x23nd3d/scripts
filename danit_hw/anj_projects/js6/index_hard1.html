@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function CreateNewUser() {
+            this.firstName = '';
+            this.lastName = '';
+            
+            this.getLogin = function() {
+                let login = (this.firstName[0] + this.lastName).toLowerCase();
+                return login;
+            }
+            
+            this.setFirstName = function(value) {
+                this.firstName = value;
+            }
+            
+            this.setLastName = function(value) {
+                this.lastName = value;
+            }
+        }
+        
+        let user = new CreateNewUser();
+        user.setFirstName(prompt("Введите имя", ''));
+        user.setLastName(prompt("Введите фамилию", ''));
+        console.log(user);
+        console.log(user.getLogin());
+    </script>
+</body>
+</html>

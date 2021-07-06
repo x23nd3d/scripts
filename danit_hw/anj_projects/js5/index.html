@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function objectCloning (obj) { //функция клонирования
+            const clone = {}; //создаем объект-клон
+            for(let key in obj){ //создаем переменную-бегунок внутри объекта
+                if(obj[key] == null){ //убираем зацикленность на null
+                    clone[key] = obj[key];
+                } else if(typeof obj[key] == "object") { //если тип key - объект, вызываем функцию клонирования объекта
+                    clone[key] = objectCloning(obj[key]); //функция клонирует вложенные свойства key-объекта
+                } else {
+                    clone[key] = obj[key]; //или клонирует свойство, если оно не является объектом
+                }
+            }
+            return clone;
+        }
+        
+        const object = {
+            name: "Jack",
+            age: 25,
+            sex: "male",
+            languages: {
+                english: true,
+                russian: false,
+                spanish: true
+            }
+        }
+        
+        //проверки
+        console.log(object); //выводится изначальный объект
+        const newObj = objectCloning(object); //создается новый клон объекта
+        console.log(newObj); //выводится новый клон объекта
+        newObj.languages.japanese = false; //добавляется свойство к объекту-клону
+        console.log(object); //выводится изначальный объект, свойство объекта-клона не добавляется
+    </script>
+</body>
+</html>

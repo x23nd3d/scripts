@@ -1,0 +1,161 @@
+@font-face {
+    src: url("../fonts/Arimo-Regular.ttf");
+
+}
+
+body {
+    font-family: Arimo-Regular, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    background-color: #3a4965;
+}
+
+/* Table body */
+.container {
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+.table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-spacing: 10px;
+    background-color: #f2f2f2;
+    box-shadow: 1px 1px 19px 5px;
+}
+
+/* Table body */
+/*.table-row {*/
+/*    height: 112px;*/
+/*}*/
+
+.table-row-content {
+    padding: 0;
+    width: 157px;
+    height: 112px;
+    background-color: #fafafa;
+    color: #484848;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    box-shadow: 1px 0 3px 0 rgba(0, 0, 0, 0.27);
+    border-top: 1px solid #d4d4d4;
+    border-bottom: 1px solid #d4d4d4;
+
+}
+
+td:nth-child(even) {
+    background-color: #e3e3e3;
+}
+
+tr:nth-child(2), tr:nth-child(3), tr:nth-child(4) {
+    width: 157px;
+    height: 156px;
+}
+
+/* Table Title START */
+.table-title {
+    color: #484848;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 5px;
+}
+
+.caption {
+    margin-top: -14px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.caption-too {
+    line-height: 0.4;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.main-content {
+    border: none;
+    width: 198px;
+    height: 166px;
+    line-height: 1;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    word-wrap: normal;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.27);
+}
+
+.main-content.green {
+    background-color: #89c331;
+}
+
+.main-content.red {
+    background-color: #f04a56;
+}
+
+.main-content.blue {
+    background-color: #20807c;
+}
+
+.title-price {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.price-block {
+    position: relative;
+}
+
+.price-big {
+    position: relative;
+    font-size: 36px;
+
+}
+
+.price-too {
+    bottom: 13px;
+    right: 7px;
+    position: relative;
+    font-size: 18px;
+
+}
+
+.price-month {
+    bottom: 6px;
+    right: 5px;
+    position: relative;
+    font-size: 14px;
+}
+
+/* Table Title END */
+.icon {
+    padding-right: 5px;
+    color: #848484;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.btn {
+    bottom: 10px;
+    position: relative;
+    border: none;
+    width: 144px;
+    height: 41px;
+    border-radius: 5px;
+    background-color: #484848;
+    border-bottom: 5px solid #343434;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    padding-top: 5px;
+    cursor: pointer;
+    background-color: #404040;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, .35) inset;
+}

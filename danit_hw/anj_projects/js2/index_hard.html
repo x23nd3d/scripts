@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let checkingNumber = +prompt("Введите начало диапазона", '');
+        let inputNumber = +prompt("Введите конец диапазона", '');
+            while (!Number.isInteger(+inputNumber) || !Number.isInteger(+checkingNumber) || inputNumber <= 1 || checkingNumber < 1) {
+                alert(`Некорректные данные. Попробуйте снова.
+(Допустимый диапазон: целые числа, начиная с 1)`);
+                checkingNumber = prompt("Введите начало диапазона", '');
+                inputNumber = prompt("Введите конец диапазона", '');
+            }
+
+        if(checkingNumber >= inputNumber) {
+            [checkingNumber, inputNumber] = [inputNumber, checkingNumber];
+        };
+                
+        for (; checkingNumber <= inputNumber; checkingNumber++) {
+            
+            let x = true;
+            for (let denominator = 2; denominator < checkingNumber; denominator++) {
+                
+                if (checkingNumber % denominator == 0) {
+                    x = false;
+                    break;
+                }
+            }
+            if (x) {
+                console.log(checkingNumber);
+            }
+        }
+    </script>
+</body>
+</html>

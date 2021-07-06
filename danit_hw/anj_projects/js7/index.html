@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function excludeBy(peopleList, excluded, property) {
+            let arrProperty = excluded.map(function(obj) {
+                return obj[property];
+            });
+            
+            let arrNew = peopleList.filter(function(obj) {
+                return (!arrProperty.includes(obj[property]));
+            });
+            
+            return arrNew;
+        }
+        
+        const peopleList = [
+            {name: 'Ivan', age: 15, gender: 'male', city: 'Kyiv'},
+            {name: 'Dima', age: 20, gender: 'male', city: 'Odesa'},
+            {name: 'Slavik', age: 25, gender: 'male', city: 'Chernihiv'},
+            {name: 'Sveta', age: 10, gender: 'female', city: 'Kyiv'}
+        ];
+        const excluded = [
+            {name: 'Vasya', age: 21, gender: 'male', city: 'Odesa'},
+            {name: 'Boris', age: 16, gender: 'male', city: 'Zhytomir'},
+            {name: 'Lida', age: 25, gender: 'female', city: 'Brovary'},
+            {name: 'Dima', age: 20, gender: 'male', city: 'Odesa'}
+        ];
+        let prop = 'city';
+        let excludeFunction = excludeBy(peopleList, excluded, prop);
+        console.log(excludeFunction);
+    </script>
+</body>
+
+</html>

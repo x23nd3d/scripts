@@ -1,0 +1,232 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" id="bootstrap-css"
+          rel="stylesheet">
+
+
+    <style>
+
+        .lds-ellipsis {
+            display: inline-block;
+            position: relative;
+            width: 64px;
+            height: 64px;
+        }
+
+        .lds-ellipsis div {
+            position: absolute;
+            top: 27px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #1d1b1a;
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+
+        .lds-ellipsis div:nth-child(1) {
+            left: 6px;
+            animation: lds-ellipsis1 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(2) {
+            left: 6px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(3) {
+            left: 26px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(4) {
+            left: 45px;
+            animation: lds-ellipsis3 0.6s infinite;
+        }
+
+        @keyframes lds-ellipsis1 {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes lds-ellipsis3 {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        @keyframes lds-ellipsis2 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(19px, 0);
+            }
+        }
+
+        .content {
+            transition: all .4s;
+            width: 75vw;
+            border-left: 1px solid #80808014;
+            border-right: 1px solid #80808014;
+            margin: 0 auto;
+            background-color: rgba(226, 226, 226, 0.12);
+        }
+
+        .content:hover {
+            box-shadow: #cccccc94 0px 0px 9px 12px;
+            background-color: rgba(181, 181, 181, 0.29);
+        }
+
+        .title {
+            font-size: 25px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .episode {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 20px 15px;
+            grid-gap: 20px 12px;
+        }
+
+        .description {
+            font-size: 14px;
+            text-align: justify;
+            font-style: italic;
+            color: #828282;
+            margin-bottom: 10px;
+        }
+
+        .show-btn {
+            cursor: pointer;
+            display: inline-block;
+            background: #8d8d8d1c;
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="content">
+
+    <div class="list">
+
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+    getAjax('https://swapi.co/api/films/', function (data) {
+        let array = data.results;
+        let sortedArray = array.sort((prev, next) => {
+            if (prev.episode_id < next.episode_id) return -1;
+        });
+        renderMovies(sortedArray);
+    });
+
+    function renderMovies(items) {
+        items.forEach(function (elems) {
+            let div = document.createElement('div');
+            div.className = 'movie';
+            let container = document.querySelector('.list');
+            div.innerHTML = `
+                <div class="title">${elems.title}</div>
+                <div class="episode">Episode: ${elems.episode_id}</div>
+                <div class="description">${elems.opening_crawl}</div>
+                `;
+            let characters = document.createElement('div');
+            characters.className = 'characters';
+            let btn = document.createElement('a');
+            btn.className = 'show-btn';
+            btn.setAttribute('data-episode', `${elems.episode_id}`);
+            btn.textContent = 'Show characters';
+            btn.addEventListener('click', function () {
+                showCharacters(this, characters, elems, getAjax);
+            });
+            container.appendChild(div);
+            div.appendChild(btn);
+            div.appendChild(characters);
+        })
+    }
+
+    function showCharacters(btn, container, items, ajax) {
+        btn.style.display = 'none';
+        let loader = document.createElement('div');
+            loader.className = 'lds-ellipsis';
+        loader.innerHTML = `<div></div><div></div><div></div><div></div>`;
+        btn.parentNode.insertBefore(loader, btn.nextSibling);
+        let characters = items.characters;
+        for (let i = 0; i < characters.length; i++)
+            ajax(`${characters[i]}`, function (data) {
+                let characterName = data.name;
+                let li = document.createElement('li');
+                li.textContent = characterName;
+                container.style.display = 'none';
+                container.appendChild(li);
+                setTimeout(function () {
+                    loader.style.display = 'none';
+                    container.style.display = 'block';
+                }, 1500);
+
+            })
+    }
+
+    function getAjax(url, whatToDo) {
+        let res = new XMLHttpRequest();
+        res.open('GET', url);
+        res.send();
+        res.onload = function () {
+            if (res.status !== 200) {
+                console.log(res.statusText);
+            } else {
+                whatToDo(JSON.parse(res.response));
+            }
+        }
+    }
+</script>
+</body>
+
+</html>

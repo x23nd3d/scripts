@@ -1,0 +1,37 @@
+.header-logo-text:hover {
+    color: #48D1CC;
+}
+
+.link {
+    color: #48D1CC;
+}
+
+.link:hover {
+    border-bottom: 1px solid #48D1CC;
+}
+
+.change-theme-button:hover {
+    color: #48D1CC;
+}
+
+.header-icon {
+    background-image: url(../img/spritesheet2.png);
+}
+
+.foursquare {
+    background-color: #48D1CC;
+}
+
+.complete-button {
+	background-color: #48D1CC;
+}
+
+.complete-button:active {
+	background-color: #008B8B;
+}
+
+input[type="checkbox"]:checked + label::before {
+    background-image: url(../img/checkbox2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}

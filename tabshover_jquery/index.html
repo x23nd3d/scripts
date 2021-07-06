@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+   <style>
+       .slogan {
+           position: relative;
+           text-decoration: none;
+       }
+       .slogan-tooltip {
+           display: block;
+           position: absolute;
+           top: 20px;
+           left: 0;
+           background-color: #000;
+           color: #fff;
+           border-radius: 5px;
+           width: 150px;
+           text-align: center;
+           padding: 15px;
+       }
+   </style>
+</head>
+<body>
+<!--&;!&;  Напишите функцию, которая при наведении мыши на название великого дома Вестероса показывает евсплывающую подсказку с его девизом, хранящимся в атрибуте data-words, и прячет его когда мышка исчезает.-->
+<!--http://joxi.ru/DmBOednfJxqlk2 - мышка рядом со ссылкой-->
+<!-- http://joxi.ru/82Q638DTwd877A - мышка на ссылке, подсказка появилась-->
+
+<!--    1.  Получить ссылку на всё элементы(кнопки)-->
+<!--    1.1 Привязать к ним событе mouseOver и вторым привязать событие mouseOut-->
+<!--    1.2 Привязать функцию которая срабатывает к mouseOver и другую функцию для mouseOut-->
+<!--    2.  Функция создаст HTML тег - span, затем привзять к нему класс с dataset-->
+<!--    2.1 Показать тег span = append-->
+
+<!--    След функция:-->
+
+<!--    1. Найти span внутри <a>-->
+<!--    2. Удалить спан класс-->
+
+<a href="#" class="slogan" data-words="Услышь мой рёв!">Ланнистеры</a>
+<a href="#" class="slogan" data-words="Нам — ярость!">Баратеоны</a>
+<a href="#" class="slogan" data-words="Высокий как честь">Аррены</a>
+<a href="#" class="slogan" data-words="Вырастая — крепнем">Тиреллы</a>
+<a href="#" class="slogan" data-words="Зима близко">Старки</a>
+<a href="#" class="slogan" data-words="Семья, долг, честь">Талли</a>
+<a href="#" class="slogan" data-words="Пламя и кровь!">Таргариены</a>
+<a href="#" class="slogan" data-words="Непреклонные, несгибаемые, несдающиеся">Мартеллы</a>
+<a href="#" class="slogan" data-words="Мы не сеем">Грейджои</a>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+// const links = document.querySelectorAll('.slogan');
+//
+// for (let i = 0; i < links.length; i++) {
+//     links[i].addEventListener('mouseover', function () {
+//         showToolTip(this, 'slogan-tooltip');
+//     });
+//     links[i].addEventListener('mouseout',function() {
+//         hideToolTip(this, 'slogan-tooltip');
+//     });
+// }
+//
+//
+// function showToolTip(elem, className) {
+//     let span = document.createElement('span');
+//     span.classList.add(className);
+//     span.textContent = elem.dataset.words;
+//     elem.appendChild(span);
+// }
+//
+// function hideToolTip(elem, className) {
+//     const span = elem.getElementsByClassName(className)[0];
+//     span.remove();
+//     console.log(span);
+// }
+
+// With Jquerry-->
+
+   $('.slogan').mouseover(function () {
+       showToolTip(this, 'slogan-tooltip')
+   });
+
+$('.slogan').mouseout(function () {
+   hideToolTip(this, 'slogan-tooltip')
+});
+
+
+   function showToolTip(elem, className) {
+       $(elem).append(`<span class="${className}">${$(elem).data('words')}</span>`)
+   }
+
+   function hideToolTip(elem, className) {
+   $(elem).find(`.${className}`).remove();
+   }
+
+
+</script>
+</body>
+</html>

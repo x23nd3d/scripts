@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let getPropertyFromObj = (objName, arrProperties) => {            
+            if (arrProperties.length == 1) {
+                return objName[arrProperties[0]];
+            }
+            let nextObj = objName[arrProperties[0]];
+            arrProperties.shift();
+            return getPropertyFromObj(nextObj, arrProperties);
+        }
+
+        function filterCollection(array, keywords, mark, ...properties) {
+            
+            let arrKey = keywords.toLowerCase().split(' ');
+            
+            let arrNew = array.filter(function(obj) {
+                
+                let allProp = [];
+                
+                properties.forEach( item => {
+                    let itemArray = item.split('.');
+                    allProp.push(getPropertyFromObj(obj, itemArray))                    
+                });
+                
+                if (mark) {
+                    if (arrKey.every( item => {
+                            return allProp.includes(item);
+                        })) {
+                        return obj;
+                    }
+                } else {
+                    if (arrKey.some( item => {
+                            return allProp.includes(item);
+                        })) {
+                        return obj;
+                    }
+                }
+            });
+            
+            return arrNew;
+        }
+
+        let police = [{
+                name: 'Григорий',
+                lastname: 'Измайлов',
+                gender: 'мужской',
+                features: {
+                    temper: 'юмор',
+                    appearance: {
+                        bodyType: 'худой',
+                        hair: 'средние'
+                    }
+                }
+            },
+            {
+                name: 'Владимир',
+                lastname: 'Яковлев',
+                gender: 'мужской',
+                features: {
+                    temper: 'вспыльчивость',
+                    appearance: {
+                        bodyType: 'ширококостный',
+                        hair: 'короткие'
+                    }
+                }
+            },
+            {
+                name: 'Игорь',
+                lastname: 'Мухич',
+                gender: 'мужской',
+                features: {
+                    temper: 'заторможенность',
+                    appearance: {
+                        bodyType: 'ширококостный',
+                        hair: 'короткие'
+                    }
+                }
+            },
+            {
+                name: 'Алиса',
+                lastname: 'Рыбкина',
+                gender: 'женский',
+                features: {
+                    temper: 'собранность',
+                    appearance: {
+                        bodyType: 'худой',
+                        hair: 'длинные'
+                    }
+                }
+            }
+        ];
+
+        let filterValue = 'МУЖСКОЙ Короткие';
+        let filterSwitcher = true;
+        let filteredArray = filterCollection(police, filterValue, filterSwitcher, 'gender', 'features.appearance.hair');
+        console.log(filteredArray);
+    </script>
+</body>
+</html>
+    

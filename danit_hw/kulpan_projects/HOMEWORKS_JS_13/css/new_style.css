@@ -1,0 +1,42 @@
+.navbar {
+    background-color: #3F51B5;
+}
+
+.latest-news {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../image/new_background.jpeg") no-repeat fixed center;
+}
+
+.logo {
+    background-color: #0b1d82;
+}
+
+.bg-block {
+    background-color: #0b1d82;
+
+}
+
+.btn-green {
+    background-color: #9C27B0;
+}
+
+.btn-blue {
+    background-color: #3F51B5;
+}
+
+.title-h2, .title-h4, .title-h5 {
+    color: #3F51B5;
+}
+
+.container-parallax {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../image/starks.jpg") no-repeat fixed center;
+    background-size: cover;
+}
+
+.post-footer {
+    background-color: #3F51B5;
+    color: #fff;
+}
+
+.footer {
+    background-color: #0b1d82;
+}

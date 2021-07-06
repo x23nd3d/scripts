@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        function checkNumber(n) {
+            while(isNaN(parseInt(n)) && !isFinite(n)) {
+                n = +prompt('Сколько пунктов в Вашем списке?', '');
+            }
+            return n;
+        }
+        
+        function createListElements(n) {
+            let cases = [];
+            for (let i = 0; i < n; i++) {
+                let yy = prompt(`Введите дело №${i+1}`);
+                cases.push(yy);
+            }
+            let li = cases.map(function(item) {
+                return `<li>${item}</li>`;
+            });
+            li = li.join("");
+            return li;
+        }
+        
+        function watch(){
+                let timeNum = document.getElementById('time-number');
+                timeNum.innerHTML--;
+                if(timeNum.innerHTML != 0){
+                    setTimeout(watch,1000)
+                }
+                else{
+                    timeNum.remove();
+                    document.getElementById('list').remove();
+                }
+            }
+        
+        function createNewList(number) {
+            
+            number = checkNumber(number);
+
+            let newList = document.createElement('ol');
+            newList.setAttribute('id', 'list');
+            document.body.appendChild(newList);
+            newList = document.getElementById("list");
+            newList.innerHTML = createListElements(number);
+
+            let timer = document.createElement('p');
+            timer.id = 'time-number';
+            timer.innerHTML = 11;
+            timer.style.fontSize = '26px';
+            timer.style.color = 'blue';
+            timer.style.margin = '30px';
+            document.body.appendChild(timer);
+            watch();
+        }
+
+        let itemsAmount = prompt('Сколько пунктов в Вашем списке?', '');
+        createNewList(itemsAmount);
+
+    </script>
+</body>
+
+</html>

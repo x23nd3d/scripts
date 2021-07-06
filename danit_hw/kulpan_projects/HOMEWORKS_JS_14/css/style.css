@@ -1,0 +1,92 @@
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+
+    }
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.titles {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+}
+.collapse {
+    padding-top: 80px;
+}
+
+.collapse-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8fcfe;
+    border: 1px solid #ececec;
+
+}
+
+.card-collapse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 73px;
+    width: 192px;
+    border-right: 1px solid #ececec;
+    color: #717171;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.card-collapse.active {
+    background-color: #18cfab;
+    color: #ffffff;
+    position: relative;
+}
+
+.card-collapse.active::after {
+    content: "";
+    position: absolute;
+    top: 75%;
+    width: 0;
+    height: 0;
+    border-top: 35px solid #18cfab;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+}
+
+.card-collapse-body {
+    display: none;
+}
+
+.card-collapse-body.active {
+    display: flex;
+}
+.card-collapse-img {
+    width: 200px;
+    height: 200px;
+}
+.card-container-body {
+    margin-top: 45px;
+    padding-bottom: 10px;
+}
+
+.collapse-body-text {
+    margin: 0;
+    padding: 0 10px;
+    color: #777777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 25px;
+    text-align: justify;
+}

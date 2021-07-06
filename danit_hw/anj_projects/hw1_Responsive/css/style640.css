@@ -1,0 +1,155 @@
+/*_____Navbar Styles_____*/
+
+.nav {
+	height: 74px;
+}
+
+.nav__text {
+	font-size: 24px;
+	margin: 0 0 0 38px;
+}
+
+.nav__btn {
+	width: 82px;
+}
+
+.nav__btn_open::before {
+	font-size: 24px;
+}
+
+.nav__btn_close::before {
+	font-size: 32px;
+}
+
+.nav__nav-menu {
+	top: 74px;
+}
+
+.nav-menu__item {
+	width: 243px;
+	padding: 13px 27px;
+}
+
+.nav-menu__link {
+	font-size: 14px;
+}
+
+/*_____Header Styles_____*/
+
+.header {
+	background-image: url(../img/header-fon_980.png);
+}
+
+.header__content {
+	padding-top: 30px;
+	margin-left: 38px;
+}
+
+.header__text {
+	font-size: 36px;
+}
+
+.header__link {
+	font-size: 24px;
+	margin-top: 22px;
+}
+
+/*_____Main-Menu Styles_____*/
+
+.main-menu__item_1 {
+	background-image: url(../img/menu-1_640.png);
+	background-position: 0 80%;
+}
+
+.main-menu__item_2 {
+    background-image: url(../img/menu-2_640.png);
+	background-position: 0 67%;
+}
+
+.main-menu__item_3 {
+    background-image: url(../img/menu-3_640.png);
+	background-position: 0 10%;
+}
+
+.main-menu__text {
+	font-size: 36px;
+}
+
+.main-menu__btn::after {
+	font-size: 36px;
+	margin: 0;
+}
+
+/*_____Our-Menu Styles_____*/
+
+.our-menu__title {
+	padding: 45px 0 20px 0;
+}
+
+.our-menu__text-big {
+	font-size: 40px;
+}
+
+.our-menu__text-small {
+	font-size: 20px;
+	margin-top: 9px;
+}
+
+.menu-column {
+	padding-bottom: 40px;
+}
+
+.menu-column__header {
+	font-size: 40px;
+	padding: 23px 0 23px 38px;
+}
+
+.menu-column__chapter {
+	margin: 0 38px;
+}
+
+.chapter__title {
+	margin: 12px 0 16px 0;
+}
+
+.chapter__name {
+	font-size: 30px;
+}
+
+.chapter__img {
+	width: 55px;
+}
+
+.chapter__icon {
+	font-size: 48px;
+}
+
+.chapter__item {
+	margin-bottom: 22px;
+}
+
+.dish__name {
+	font-size: 27px;
+}
+
+.dish__price {
+	font-size: 27px;
+}
+
+.dish__description {
+	font-size: 17px;
+	margin-top: 16px;
+	line-height: 1em;
+}
+
+/*_____Footer Styles_____*/
+
+.footer {
+	margin-top: 30px;
+	height: 5em;
+}
+
+.footer__text {
+	font-size: 18px;
+	margin: 8px 0;
+}

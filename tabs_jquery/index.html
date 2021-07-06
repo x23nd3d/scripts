@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+   <style>
+       .btn-modal {
+           text-decoration: none;
+           display: inline-block;
+           padding: 10px 15px;
+           border-radius: 5px;
+           color: red;
+           border: 1px solid red;
+       }
+
+       .modal {
+           visibility: hidden;
+           border: 1px solid orange;
+           padding: 30px 50px;
+           box-sizing: border-box;
+           position: absolute;
+           top: 0;
+           left: 0;
+           transform: translate(-100%, -100%);
+           transition: all 1s;
+       }
+
+       .modal.active {
+           visibility: visible;
+           bottom: 50%;
+           left: 50%;
+           transform: translate(-50%, 50%);
+       }
+
+       .modal-cross {
+           text-decoration: none;
+           font-weight: bold;
+           color: orange;
+           position: absolute;
+           top: 5px;
+           right: 5px;
+       }
+
+       .modal-title {
+           font-size: 24px;
+           margin: 0;
+           padding: 0;
+       }
+
+   </style>
+</head>
+
+<body>
+
+<a href="#" class="btn-modal" data-target="words-modal" data-info="Я обещаю!">Парашеон</a>
+<a href="#" class="btn-modal" data-target="words-modal" data-info="Мы не сеем">Грейджои</a>
+<a href="#" class="btn-modal" data-target="words-modal" data-info="Пламя и кровь!">Таргариены</a>
+<a href="#" class="btn-modal" data-target="words-modal" data-info="Непреклонные, несгибаемые, несдающиеся">Мартеллы</a>
+
+<div id="words-modal" class="modal">
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<script>
+   // const btnModal = document.getElementsByClassName("btn-modal");
+   // for (let i = 0; i < btnModal.length; i++) {
+   //     btnModal[i].addEventListener("click", showModal);
+   // }
+   //
+
+console.log($);
+  $('.btn-modal').click(showModal);
+  $('.btn-modal').css('font-size', '24px').eq(0).css('padding', '15px 20px');
+
+   function showModal() {
+       $(`#${this.dataset.target}`).html(`<h2>${this.dataset.info}</h2>`).addClass('active');
+       // const modal = document.getElementById(this.dataset.target);
+       // modal.innerHTML = ``;
+       // modal.classList.add("active");
+   }
+</script>
+
+</body>
+
+</html>
+

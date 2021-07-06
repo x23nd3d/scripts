@@ -1,0 +1,56 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport"
+         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <link rel="stylesheet" href="css/style.css">
+   <style> 
+
+.hidden {
+
+   display: none;
+}
+   </style>
+   
+</head>
+<body>
+
+<button class="collapse-btn" data-target="text">Show</button>
+<p id="text" class="hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+   Ad corporis deleniti dolore error eum ex explicabo facilis illum incidunt laboriosam nemo
+   nobis nostrum porro quasi repellat sequi suscipit, voluptas voluptatum?</p>
+
+
+
+
+
+<script>
+
+const collapseBtn = document.getElementsByClassName('collapse-btn');
+for (let i = 0; i < collapseBtn.length; i++) {
+
+   collapseBtn[i].addEventListener('click', collapseToggle);
+}
+
+   function collapseToggle() {
+   const paragraph =  document.getElementById(this.dataset.target);
+   paragraph.classList.toggle('hidden'); // Если  есть - уберет, если не назначен - добавит
+   console.log(paragraph);
+
+   if (this.textContent === 'Hidden') {
+       this.textContent = 'Show';
+   } else { this.textContent = 'Hidden';
+   }
+
+
+   }
+
+</script>
+
+
+</body>
+</html>

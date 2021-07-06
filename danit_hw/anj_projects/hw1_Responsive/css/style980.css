@@ -1,0 +1,182 @@
+/*_____Navbar Styles_____*/
+
+.nav {
+	height: 97px;
+}
+
+.nav__content {
+	margin: 0 30px;
+}
+
+.nav__text {
+    display: none;
+}
+
+.nav__btn {
+	display: none;
+}
+
+.nav__nav-menu {
+	position: inherit;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-menu__item {
+	margin: 0;
+	background-color: transparent;
+	border: none;
+	width: auto;
+	padding: 0;
+	margin-right: 30px;
+}
+
+.nav-menu__item:hover {
+    color: #fff;
+	background-color: transparent;
+}
+
+.nav-menu__link {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: rgba(235, 235, 235, 255);
+}
+
+.nav__logo {
+	display: inline-block;
+	height: 83px;
+	width: 104px;
+	background-image: url(../img/main-logo.png);
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*_____Header Styles_____*/
+
+.header {
+	background-image: url(../img/header-fon_1200.png);
+}
+
+.header__content {
+	padding-top: 64px;
+}
+
+.header__text {
+	font-size: 54px;
+}
+
+.header__link {
+	font-size: 34px;
+	margin-top: 57px;
+}
+
+/*_____Main-Menu Styles_____*/
+
+.main-menu {
+	flex-direction: row;
+}
+
+.main-menu__link {
+    height: calc(100vw/3);
+    width: calc(100vw/3);
+}
+
+.main-menu__text {
+	font-size: 38px;
+}
+
+.main-menu__btn {
+	display: none;
+}
+
+/*_____Our-Menu Styles_____*/
+
+.our-menu__title {
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 30px;
+}
+
+.our-menu__text-big {
+	font-size: 36px;
+}
+
+.our-menu__logo {
+	display: inline-block;
+	background-image: url(../img/menu-logo.png);
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+	width: 109px;
+	height: 89px;
+}
+
+.our-menu-content {
+	display: flex;
+}
+
+.menu-column__header {
+	font-size: 34px;
+	padding-left: 18px;
+}
+
+.menu-column__chapter {
+	margin: 0 15px;
+}
+
+.our-menu_item {
+	width: 50%;
+}
+
+.chapter__name {
+	font-size: 24px;
+}
+
+.chapter__icon {
+	font-size: 42px;
+}
+
+.dish__name {
+	font-size: 24px;
+}
+
+.dish__price {
+	font-size: 24px;
+}
+
+.dish__description {
+	font-size: 16px;
+}
+
+/*_____Footer Styles_____*/
+
+.footer {
+	height: 100px;
+}
+
+.footer__content {
+	justify-content: space-between;
+	margin: 0 30px;
+}
+
+.footer__logo {
+	display: inline-block;
+	height: 83px;
+	width: 104px;
+	background-image: url(../img/main-logo.png);
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.footer__info {
+	display: flex;
+}
+
+.footer__text {
+	margin-left: 5px;
+}

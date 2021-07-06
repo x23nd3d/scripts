@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .products-list {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 250px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        .product-price {
+            color: grey;
+            font-size: 22px;
+        }
+
+        .btn-show-more {
+            display: block;
+            text-decoration: none;
+            margin: 30px auto;
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100px;
+            font-size: 18px;
+        }
+
+        .btn-show-more:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--  Получить по API "http://events.in.ua/lesson2/product-list-exersise.php" первые 3 товара и вывести их на страницу внутри тега с id=product_list, используя шаблон product-card для товара. 
+При клике на кнопку Show more выводить следующую 3 товара (нельзя сразу загрузить все товары, нужно при клике каждый раз обращаться к API).
+   Описание API: по адресу "http://events.in.ua/lesson2/product-list-exersise.php?count=количествоТоваров" вы можете получить N-е количество товаров с начала списка. То есть запрос на "http://events.in.ua/lesson2/product-list-exersise.php?count=3" вернет первые 3 товара, запрос по адресу "http://events.in.ua/lesson2/product-list-exersise.php?count=6" - первые 6 товаров, и так далее.
+   Важно! Код должен быть максимально универсальным, с использованием функций, которые потом желательно переиспольновать в других ситуациях.
+   Примечание: Внимательно смотрите на то, что вы получаете при запросе. И да пребудет с вами Сила! "  -->
+
+    <h2 style="text-align:center">Food list</h2>
+    <div id="product_list" class="products-list">
+
+        <!--
+        <div class="product-card">
+            <h3 class="product-name">Cheese</h3>
+            <p class="product-price">$2.50</p>
+            <p class="product-location"><strong>Location:</strong> Refrigerated foods</p>
+        </div>
+        
+        <div class="product-card">
+            <h3 class="product-name">Cheese</h3>
+            <p class="product-price">$2.50</p>
+            <p class="product-location"><strong>Location:</strong> Refrigerated foods</p>
+        </div>
+        
+        <div class="product-card">
+            <h3 class="product-name">Cheese</h3>
+            <p class="product-price">$2.50</p>
+            <p class="product-location"><strong>Location:</strong> Refrigerated foods</p>
+        </div>     
+-->
+
+    </div>
+    <a href="#" id='show-more-products' class="btn-show-more">Show more</a>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script>
+
+        getProducts(3, 3, renderProducts);
+
+        $('#show-more-products').click(function (e) {
+            e.preventDefault();
+            let productCount = $('.product-card').length;
+            console.log(productCount);
+            getProducts((productCount+3), 3, renderProducts);
+        });
+
+        function getProducts(count, countLeft, func) {
+            $.ajax({
+                type: "GET",
+                url: `http://events.in.ua/lesson2/product-list-exersise.php?count=${count}`, // указываем URL
+                dataType: "json",
+                success: function(data) { // если запрос прошел удачно
+                    console.log(data);
+                    let array = data.map(val => JSON.parse(val));
+                        func(array.slice(-countLeft));
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+
+        function renderProducts(items) {
+        items.forEach(products => {
+            $('#product_list').append(`
+            <div class="product-card">
+            <h3 class="product-name">${products.Name}</h3>
+            <p class="product-price">$${products.Price}</p>
+            <p class="product-location"><strong>Location:</strong>${products.Location}</p>
+        </div>`);
+        })
+        }
+        
+    </script>
+</body></html>
+
+
+
+
+
+

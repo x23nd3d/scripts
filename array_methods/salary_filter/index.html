@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+</head>
+
+<body>
+
+<!--&;!&; Напишите функцию, которая принимает в себя массив зарплат и правило, по которому его нужно сортировать (по возврастанию или по убыванию). Функция должна возвращать новый массив. Первым аргументом будет массив, вторым одно из двух правил в виде строки: "ASC" - сортировка по увеличению и "DESC" - по уменьшению &;&gt;-->
+
+<script>
+   const sallary = [5600, 20000, 15400, 3000, 8000];
+   const sallaryFromSmall = sortSallary(sallary); // результат должен быть: sallaryFromSmall = [3000, 5600, 8000, 15400, 20000]
+   console.log(sallaryFromSmall);
+   console.log(sallary);
+   //        const sallaryFromBig = sortSallary(sallary, "DESC"); // результат должен быть: sallaryFromBig = [20000, 15400, 8000, 5600, 3000];
+
+   function sortSallary(arr, rule = "ASC") {
+       if(rule != "ASC" && rule != "DESC") {
+           return false;
+       }
+       const newArr = arr.slice();
+       let result = [];
+       for (let i = 0, arrLen = newArr.length; i < arrLen; i++) {
+           let position = arr.indexOf(findBiggestValue(newArr));
+           //            console.log(position);
+           let element = newArr.splice(position, 1); // Новый массив из однго элемента
+           //            console.log(element);
+           //            console.log(arr;
+           result.push(element[0]);
+
+       }
+
+       if(rule === "ASC") {
+           result = result.reverse();
+       }
+
+       return result;
+   }
+
+   function findBiggestValue(arr) {
+       let biggestValue = arr[0];
+       for (let i = 1; i < arr.length; i++) {
+           if (biggestValue < arr[i]) {
+               biggestValue = arr[i];
+           }
+       }
+       return biggestValue;
+   }
+
+</script>
+
+</body>
+
+</html>
